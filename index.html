@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Level Budget Tracker Analytics — Data Visualization Lab</title>
+  <!-- Power BI Theme Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- 1. APP HEADER -->
+  <!-- ========================================================================= -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="header-logo">₹</div>
+      <div class="header-title-group">
+        <h1>MULTI-LEVEL BUDGET TRACKER ANALYTICS</h1>
+        <p>Data Visualization Lab Project • Micro, Meso & Macro Financial Intelligence</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="badge-connected">● SQLite & Power BI Synced</div>
+      <button class="btn btn-teal btn-sm" id="btn-global-export-pbi">⚡ Sync Power BI CSVs</button>
+      <button class="btn btn-outline btn-sm" id="btn-global-refresh" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3);">🔄 Refresh</button>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. NAVIGATION TABS -->
+  <!-- ========================================================================= -->
+  <!-- ========================================================================= -->
+  <!-- 2. NAVIGATION TABS -->
+  <!-- ========================================================================= -->
+  <nav class="tabs-nav" aria-label="Dashboard Pages">
+    <button class="tab-btn active" data-tab="landing">🏠 Home / Mode Selector</button>
+    <button class="tab-btn" data-tab="individual">👤 Individual Mode</button>
+    <button class="tab-btn" data-tab="organization">🏢 Organization Mode</button>
+    <button class="tab-btn" data-tab="state-nation">🇮🇳 State & Nation Mode</button>
+    <button class="tab-btn" data-tab="overview">📊 Executive Overview</button>
+    <button class="tab-btn" data-tab="predictive">📈 Predictive & What-If</button>
+    <button class="tab-btn" data-tab="powerbi-hub">⚡ Power BI Data Hub</button>
+  </nav>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MAIN DASHBOARD CONTAINER -->
+  <!-- ========================================================================= -->
+  <main class="main-wrapper">
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 0: LANDING PAGE & MODE SELECTOR -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content active" id="tab-landing">
+      <!-- Hero Banner -->
+      <div class="landing-hero">
+        <div class="landing-badge">Data Visualization Lab Project • NIE Mysuru</div>
+        <h1>MULTI-LEVEL BUDGET TRACKER ANALYTICS</h1>
+        <p>
+          A unified, full-stack financial intelligence platform and Power BI enterprise architecture analyzing economic dynamics across three hierarchical tiers: <strong>Micro (Personal Household Budgets)</strong>, <strong>Meso (Enterprise Departmental Cost Centers)</strong>, and <strong>Macro (State Public Finance & National Union Budgets)</strong>. Designed with live user input studios, real-time recalculations, Holt-Winters predictive forecasting, and verified against authentic Kaggle and RBI data series.
+        </p>
+
+        <div class="hero-highlights-row">
+          <span class="highlight-pill">⚡ Live User Input Studios</span>
+          <span class="highlight-pill">👤 10-Category Spend Analysis</span>
+          <span class="highlight-pill">🏢 Department Cost vs Revenue</span>
+          <span class="highlight-pill">🇮🇳 15+ State Public Deficits</span>
+          <span class="highlight-pill">🔮 95% Confidence Forecasts</span>
+          <span class="highlight-pill">📊 Star Schema Power BI Hub</span>
+        </div>
+      </div>
+
+      <!-- Mode Selector Section Title -->
+      <div class="landing-section-title">
+        <h2>Select an Analysis Mode</h2>
+        <p>Select any tier below to enter its specialized interactive workspace with custom user inputs, automated calculations, and rich visual charts.</p>
+      </div>
+
+      <!-- 3 Primary Mode Cards -->
+      <div class="mode-cards-grid">
+        <!-- 1. Individual Mode -->
+        <div class="mode-card mode-card-ind">
+          <div>
+            <div class="mode-icon-circle icon-amber">👤</div>
+            <div class="mode-tag">Tier 1 • Micro-Budget</div>
+            <h3 class="mode-title">Individual Mode</h3>
+            <p class="mode-desc">
+              Manage personal and household finances. Input your monthly salary, secondary income, and custom spending targets across 10 essential categories. Dynamically compute your savings rate %, detect overspending, and track your financial health score.
+            </p>
+            <ul class="mode-features-list">
+              <li>10-Category spend & target budget studio</li>
+              <li>Real-time Donut Chart & Variance color-coded bar chart</li>
+              <li>12-Month simulated trajectory vs. budget threshold</li>
+              <li>Financial Health Scorecard (0-100 Rating)</li>
+              <li>Searchable personal transactions ledger with CRUD</li>
+            </ul>
+          </div>
+          <button type="button" class="btn-launch-mode btn-launch-ind" onclick="App.switchTab('individual')">
+            🚀 Launch Individual Mode &rarr;
+          </button>
+        </div>
+
+        <!-- 2. Organization Mode -->
+        <div class="mode-card mode-card-org">
+          <div>
+            <div class="mode-icon-circle icon-teal">🏢</div>
+            <div class="mode-tag">Tier 2 • Meso-Budget</div>
+            <h3 class="mode-title">Organization Mode</h3>
+            <p class="mode-desc">
+              Analyze enterprise financial health using Superstore cost center modeling. Enter departmental operational budgets, monitor operating costs (<code>Cost = Sales - Profit</code>), evaluate gross profit margins, and inspect regional performance matrices.
+            </p>
+            <ul class="mode-features-list">
+              <li>Corporate, Consumer & Home Office department modeling</li>
+              <li>Clustered Bar Chart: Revenue vs. Cost comparison</li>
+              <li>Quarterly revenue growth trajectory (% YoY)</li>
+              <li>Profitability treemap drill-down by product category</li>
+              <li>Region &times; Category variance heatmap matrix</li>
+            </ul>
+          </div>
+          <button type="button" class="btn-launch-mode btn-launch-org" onclick="App.switchTab('organization')">
+            🚀 Launch Organization Mode &rarr;
+          </button>
+        </div>
+
+        <!-- 3. State & Nation Mode -->
+        <div class="mode-card mode-card-state">
+          <div>
+            <div class="mode-icon-circle icon-navy">🇮🇳</div>
+            <div class="mode-tag">Tier 3 • Macro-Budget</div>
+            <h3 class="mode-title">State & Nation Mode</h3>
+            <p class="mode-desc">
+              Explore macroeconomic public finance data from RBI and Government of India Union Budgets. Investigate state revenues, expenditures, fiscal deficits, debt-to-revenue ratios, and national central sector allocations across key ministries.
+            </p>
+            <ul class="mode-features-list">
+              <li>15+ Indian State public finance interactive cards</li>
+              <li>Multi-year state revenue vs. expenditure line chart</li>
+              <li>National Union Budget sector allocation ranking</li>
+              <li>Debt servicing ratio & deficit tracking</li>
+              <li>Authentic Kaggle & RBI statistical series</li>
+            </ul>
+          </div>
+          <button type="button" class="btn-launch-mode btn-launch-state" onclick="App.switchTab('state-nation')">
+            🚀 Launch State & Nation Mode &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Secondary Analytical Modules -->
+      <div style="margin-block-start: 1rem; margin-block-end: 1rem;">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary-navy); margin-block-end: 1rem; text-align: center;">
+          Cross-Cutting Analytics & Power BI Production Tools
+        </h3>
+        <div class="secondary-modes-grid">
+          <div class="secondary-card">
+            <div>
+              <h3>📊 Executive Overview</h3>
+              <p>Combined cross-level comparative dashboard featuring 6 top-line KPI cards and a normalized cashflow combo chart.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('overview')">Open Overview &rarr;</button>
+          </div>
+          <div class="secondary-card">
+            <div>
+              <h3>📈 Predictive & What-If Engine</h3>
+              <p>Holt-Winters exponential smoothing forecasts with 95% confidence bounds and interactive policy sensitivity sliders.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('predictive')">Open Predictive &rarr;</button>
+          </div>
+          <div class="secondary-card">
+            <div>
+              <h3>⚡ Power BI Data Hub</h3>
+              <p>Download ready-to-load transformed CSVs, copy DAX measures and Power Query M-code, and view technical architecture documentation.</p>
+            </div>
+            <button type="button" class="btn btn-teal btn-sm" onclick="App.switchTab('powerbi-hub')">Open Power BI Hub &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 1: EXECUTIVE OVERVIEW (PAGE 1 SPEC) -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content" id="tab-overview">
+      <div class="mode-top-banner">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('landing')">&larr; Back to Mode Selector</button>
+          <span class="mode-badge-indicator">📊 Mode: Executive Overview</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Switch:</span>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('individual')">👤 Individual</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('organization')">🏢 Organization</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('state-nation')">🇮🇳 State/Nation</button>
+        </div>
+      </div>
+      <div class="filter-bar">
+        <div class="filter-group">
+          <div class="filter-item">
+            <label for="overview-year-slicer">Year Slicer:</label>
+            <select id="overview-year-slicer" class="filter-select">
+              <option value="All">All Years (2021-2024)</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="overview-level-slicer">Level Slicer:</label>
+            <select id="overview-level-slicer" class="filter-select">
+              <option value="All">All Levels</option>
+              <option value="Individual">Individual Level</option>
+              <option value="Organization">Organization Level</option>
+              <option value="State">State Level</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <span style="font-size: 0.82rem; color: var(--text-muted);">Standard Star Schema with Shared Date Dimension</span>
+        </div>
+      </div>
+
+      <!-- 6 KPI Cards with Conditional Formatting -->
+      <div class="kpi-grid" id="overview-kpi-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Page 1 Combo Chart -->
+      <div class="visuals-grid">
+        <div class="card col-12">
+          <div class="card-header">
+            <div>
+              <h3>Income/Revenue vs Expenditure/Cost Across All Three Levels</h3>
+              <p>Multi-tier financial cashflow inflows and outflows normalized by year (2021-2024)</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-lg">
+            <canvas id="chart-overview-combo"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 2: INDIVIDUAL ANALYTICS (PAGE 2 SPEC) -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content" id="tab-individual">
+      <div class="mode-top-banner">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('landing')">&larr; Back to Mode Selector</button>
+          <span class="mode-badge-indicator">👤 Mode: Individual Budget Analytics</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Switch:</span>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('organization')">🏢 Organization Mode</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('state-nation')">🇮🇳 State &amp; Nation Mode</button>
+        </div>
+      </div>
+      <!-- Interactive User Input Studio for Individual Mode -->
+      <div class="input-studio-card">
+        <div class="studio-header">
+          <div>
+            <h2>👤 Individual Interactive Budget Studio</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Input your monthly income and category-wise expenditures below, or pick a preset profile to generate live graphs and financial analytics.
+            </p>
+          </div>
+          <div class="studio-preset-bar">
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Quick Profiles:</span>
+            <button type="button" class="preset-chip" onclick="App.applyIndPreset('tech')">💻 Tech Professional (₹1.6L)</button>
+            <button type="button" class="preset-chip" onclick="App.applyIndPreset('family')">👨‍👩‍👧 Family Household (₹2.5L)</button>
+            <button type="button" class="preset-chip" onclick="App.applyIndPreset('fresher')">🎓 Fresher / Student (₹50k)</button>
+            <button type="button" class="preset-chip" onclick="App.applyIndPreset('custom')">🔄 Blank / Custom</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-block-end: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="input-ind-salary" style="font-weight: 700; color: var(--primary-navy);">Monthly Salary / Core Income (₹):</label>
+            <input type="number" id="input-ind-salary" class="form-control" value="135000" min="0" step="1000" style="font-weight: 700; font-size: 1.1rem; color: var(--accent-teal);">
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="input-ind-other-income" style="font-weight: 700; color: var(--primary-navy);">Secondary Income / Investments (₹):</label>
+            <input type="number" id="input-ind-other-income" class="form-control" value="25000" min="0" step="500" style="font-weight: 700; font-size: 1.1rem; color: var(--accent-amber);">
+          </div>
+        </div>
+
+        <!-- 10 Category Spend vs Target Budget Grid -->
+        <div class="studio-grid" id="ind-studio-categories">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <div class="studio-action-row">
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" id="btn-compute-ind" style="padding: 0.75rem 1.75rem; font-size: 0.95rem;">
+              🚀 Compute & Generate Graphs
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-reset-ind">🔄 Reset Defaults</button>
+          </div>
+          <div id="ind-health-score-container" style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Financial Health Score:</span>
+            <span class="score-badge" id="ind-health-score-badge">92 / 100 • Excellent</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-group">
+          <button class="btn btn-primary" id="btn-add-tx">+ Add Transaction</button>
+          <button class="btn btn-accent" id="btn-edit-budgets">⚙️ Set Category Budgets</button>
+          <div class="filter-item">
+            <label for="ind-category-filter">Category:</label>
+            <select id="ind-category-filter" class="filter-select">
+              <option value="All">All Categories</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="ind-year-filter">Year:</label>
+            <select id="ind-year-filter" class="filter-select">
+              <option value="All">All Years</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-item">
+          <label for="tx-search-input">Search Ledger:</label>
+          <input type="text" id="tx-search-input" class="filter-select" placeholder="Search note, category..." style="width: 220px;">
+        </div>
+      </div>
+
+      <!-- Individual KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Total Income (Ind)</div>
+          <div class="kpi-value" id="ind-kpi-income">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Salary & Inflows</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Total Expense (Ind)</div>
+          <div class="kpi-value" id="ind-kpi-expense">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Household Outflows</div>
+        </div>
+        <div class="kpi-card kpi-positive">
+          <div class="kpi-title">Net Savings</div>
+          <div class="kpi-value" id="ind-kpi-savings">₹0</div>
+          <div class="kpi-subtext subtext-positive" id="ind-kpi-savings-rate">0% Savings Rate</div>
+        </div>
+        <div class="kpi-card kpi-accent">
+          <div class="kpi-title">Total Planned Budget</div>
+          <div class="kpi-value" id="ind-kpi-budget">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Allocated Target</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Budget Utilization %</div>
+          <div class="kpi-value" id="ind-kpi-utilization">0%</div>
+          <div class="kpi-subtext">
+            <span id="ind-overspend-flag" class="tag-badge tag-income">Within Budget</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 2 Visuals Grid -->
+      <div class="visuals-grid">
+        <!-- Donut Chart: Total Expense by Category -->
+        <div class="card col-4">
+          <div class="card-header">
+            <div>
+              <h3>Total Expense by Category</h3>
+              <p>Spending distribution breakdown</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-ind-donut"></canvas>
+          </div>
+        </div>
+
+        <!-- Line Chart: Total Expense by MonthYear vs Planned Budget -->
+        <div class="card col-8">
+          <div class="card-header">
+            <div>
+              <h3>Total Expense by Month vs Planned Budget</h3>
+              <p>Monthly tracking against planned spending limit</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-ind-line"></canvas>
+          </div>
+        </div>
+
+        <!-- Bar Chart: Budget Variance by Category (Colored by Overspend Flag) -->
+        <div class="card col-12">
+          <div class="card-header">
+            <div>
+              <h3>Budget Variance by Category (Overspend Flag Color Coded)</h3>
+              <p>Green = Positive variance (Under budget) | Red = Negative variance (Over budget)</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-ind-variance"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Searchable Transactions Table -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Daily Personal Transactions Ledger</h3>
+            <p>Real-time CRUD enabled • Direct Kaggle "Daily Household Transactions" Schema</p>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Payment Mode</th>
+                <th>Amount (₹)</th>
+                <th>Note</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tx-table-body">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 3: ORGANIZATION ANALYTICS (PAGE 3 SPEC) -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content" id="tab-organization">
+      <div class="mode-top-banner">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('landing')">&larr; Back to Mode Selector</button>
+          <span class="mode-badge-indicator">🏢 Mode: Organization Financial Analytics</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Switch:</span>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('individual')">👤 Individual Mode</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('state-nation')">🇮🇳 State &amp; Nation Mode</button>
+        </div>
+      </div>
+      <!-- Interactive User Input Studio for Organization Mode -->
+      <div class="input-studio-card">
+        <div class="studio-header">
+          <div>
+            <h2>🏢 Organization Interactive Cost & Revenue Studio</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Input departmental operational budgets, enterprise revenues, and costs below to generate real-time corporate profitability graphs.
+            </p>
+          </div>
+          <div class="studio-preset-bar">
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Quick Profiles:</span>
+            <button type="button" class="preset-chip" onclick="App.applyOrgPreset('superstore')">🛒 Superstore Retail (₹27 Cr)</button>
+            <button type="button" class="preset-chip" onclick="App.applyOrgPreset('saas')">☁️ Cloud & SaaS Corp (₹45 Cr)</button>
+            <button type="button" class="preset-chip" onclick="App.applyOrgPreset('manufacturing')">🏭 Manufacturing Corp (₹32 Cr)</button>
+            <button type="button" class="preset-chip" onclick="App.applyOrgPreset('custom')">🔄 Blank / Custom</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-block-end: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="input-org-name" style="font-weight: 700; color: var(--primary-navy);">Enterprise / Company Name:</label>
+            <input type="text" id="input-org-name" class="form-control" value="Superstore Enterprise India">
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="input-org-year" style="font-weight: 700; color: var(--primary-navy);">Fiscal Year:</label>
+            <input type="number" id="input-org-year" class="form-control" value="2024">
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--primary-navy); margin-block: 0.75rem 0.5rem;">Department Performance (Cost Centers):</h4>
+        <div class="studio-grid">
+          <!-- Corporate -->
+          <div class="studio-category-box">
+            <div class="studio-category-header">
+              <span>Corporate Department</span>
+              <span style="color: var(--primary-navy);">🏢 Cost Center</span>
+            </div>
+            <div class="studio-dual-inputs">
+              <div>
+                <label for="input-dept-corp-rev">Revenue (₹)</label>
+                <input type="number" id="input-dept-corp-rev" value="145000000" step="500000">
+              </div>
+              <div>
+                <label for="input-dept-corp-cost">Cost (₹)</label>
+                <input type="number" id="input-dept-corp-cost" value="108000000" step="500000">
+              </div>
+            </div>
+          </div>
+          <!-- Consumer -->
+          <div class="studio-category-box">
+            <div class="studio-category-header">
+              <span>Consumer Department</span>
+              <span style="color: var(--primary-navy);">🛍️ Cost Center</span>
+            </div>
+            <div class="studio-dual-inputs">
+              <div>
+                <label for="input-dept-cons-rev">Revenue (₹)</label>
+                <input type="number" id="input-dept-cons-rev" value="82000000" step="500000">
+              </div>
+              <div>
+                <label for="input-dept-cons-cost">Cost (₹)</label>
+                <input type="number" id="input-dept-cons-cost" value="61000000" step="500000">
+              </div>
+            </div>
+          </div>
+          <!-- Home Office -->
+          <div class="studio-category-box">
+            <div class="studio-category-header">
+              <span>Home Office Department</span>
+              <span style="color: var(--primary-navy);">🏠 Cost Center</span>
+            </div>
+            <div class="studio-dual-inputs">
+              <div>
+                <label for="input-dept-home-rev">Revenue (₹)</label>
+                <input type="number" id="input-dept-home-rev" value="46000000" step="500000">
+              </div>
+              <div>
+                <label for="input-dept-home-cost">Cost (₹)</label>
+                <input type="number" id="input-dept-home-cost" value="36000000" step="500000">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="studio-action-row">
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" id="btn-compute-org" style="padding: 0.75rem 1.75rem; font-size: 0.95rem;">
+              🚀 Compute & Generate Organization Visuals
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-reset-org">🔄 Reset Defaults</button>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Calculates Cost = Sales - Profit and Departmental Utilization</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-group">
+          <button class="btn btn-primary" id="btn-add-order">+ Add Enterprise Cost / Order</button>
+          <div class="filter-item">
+            <label for="org-dept-filter">Department:</label>
+            <select id="org-dept-filter" class="filter-select">
+              <option value="All">All Departments</option>
+              <option value="Consumer">Consumer</option>
+              <option value="Corporate">Corporate</option>
+              <option value="Home Office">Home Office</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="org-year-filter">Year:</label>
+            <select id="org-year-filter" class="filter-select">
+              <option value="All">All Years</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-item">
+          <label for="order-search-input">Search Orders:</label>
+          <input type="text" id="order-search-input" class="filter-select" placeholder="Search order ID..." style="width: 220px;">
+        </div>
+      </div>
+
+      <!-- Organization KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Total Revenue (Org)</div>
+          <div class="kpi-value" id="org-kpi-revenue">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Gross Enterprise Sales</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Total Cost (Org)</div>
+          <div class="kpi-value" id="org-kpi-cost">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Cost = Sales - Profit</div>
+        </div>
+        <div class="kpi-card kpi-positive">
+          <div class="kpi-title">Total Profit (Org)</div>
+          <div class="kpi-value" id="org-kpi-profit">₹0</div>
+          <div class="kpi-subtext subtext-positive" id="org-kpi-variance">₹0 Variance</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Budget Utilization %</div>
+          <div class="kpi-value" id="org-kpi-utilization">0%</div>
+          <div class="kpi-subtext subtext-neutral">Cost / Revenue</div>
+        </div>
+        <div class="kpi-card kpi-accent">
+          <div class="kpi-title">Revenue Growth %</div>
+          <div class="kpi-value" id="org-kpi-growth">0%</div>
+          <div class="kpi-subtext subtext-neutral">Year-over-Year</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Top Department by Cost</div>
+          <div class="kpi-value" id="org-kpi-top-dept" style="font-size: 1.15rem;">Corporate</div>
+          <div class="kpi-subtext subtext-neutral">Highest Expenditure</div>
+        </div>
+      </div>
+
+      <!-- Page 3 Visuals Grid -->
+      <div class="visuals-grid">
+        <!-- Clustered Bar: Total Revenue vs Total Cost by Department -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Revenue vs Cost by Department</h3>
+              <p>Departmental expenditure vs top-line sales</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-org-clustered"></canvas>
+          </div>
+        </div>
+
+        <!-- Line Chart: Quarterly Revenue Growth % -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Quarterly Revenue Growth %</h3>
+              <p>Quarter-on-quarter expansion trajectory</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-org-growth"></canvas>
+          </div>
+        </div>
+
+        <!-- Treemap / Category Profit Breakdown -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Total Profit by Category & Sub-Category</h3>
+              <p>Hierarchical profitability drill-down</p>
+            </div>
+          </div>
+          <div id="org-treemap-container" style="max-height: 320px; overflow-y: auto;">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- Matrix Visual: Region (rows) x Category (columns), values = Budget Variance -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Matrix: Region × Category (Budget Variance)</h3>
+              <p>Green = Positive Margin | Red = Negative Margin</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="matrix-table">
+              <thead id="org-matrix-head"></thead>
+              <tbody id="org-matrix-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders Sample Table -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Enterprise Cost & Order Ledger</h3>
+            <p>Superstore Dataset Architecture • Cost Centers & Procurement Orders</p>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Department</th>
+                <th>Region</th>
+                <th>Category</th>
+                <th>Sales (₹)</th>
+                <th>Cost (₹)</th>
+                <th>Profit / Variance (₹)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="order-table-body">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 4: STATE & NATION ANALYTICS (PAGE 4 SPEC) -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content" id="tab-state-nation">
+      <div class="mode-top-banner">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('landing')">&larr; Back to Mode Selector</button>
+          <span class="mode-badge-indicator">🇮🇳 Mode: State &amp; Nation Public Finance</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Switch:</span>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('individual')">👤 Individual Mode</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.switchTab('organization')">🏢 Organization Mode</button>
+        </div>
+      </div>
+      <div class="filter-bar">
+        <div class="filter-group">
+          <div class="filter-item">
+            <label for="state-year-filter">Public Finance Year:</label>
+            <select id="state-year-filter" class="filter-select">
+              <option value="All">Latest Year (2024)</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">RBI & Union Budget Government Finance Series</span>
+        </div>
+      </div>
+
+      <!-- State & Nation KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Total State Revenue</div>
+          <div class="kpi-value" id="state-kpi-revenue">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Aggregate State Inflows</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Total State Expenditure</div>
+          <div class="kpi-value" id="state-kpi-expenditure">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Public Outlay</div>
+        </div>
+        <div class="kpi-card kpi-negative">
+          <div class="kpi-title">Fiscal Deficit</div>
+          <div class="kpi-value" id="state-kpi-deficit">₹0</div>
+          <div class="kpi-subtext subtext-negative">Revenue - Expenditure</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Debt to Revenue %</div>
+          <div class="kpi-value" id="state-kpi-debt-ratio">0%</div>
+          <div class="kpi-subtext subtext-neutral">Debt Servicing Ratio</div>
+        </div>
+        <div class="kpi-card kpi-accent">
+          <div class="kpi-title">Union Budget Allocation</div>
+          <div class="kpi-value" id="state-kpi-union-alloc">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Central Ministries</div>
+        </div>
+      </div>
+
+      <!-- Page 4 Visuals Grid -->
+      <div class="visuals-grid">
+        <!-- Interactive State Choropleth / Cards -->
+        <div class="card col-5">
+          <div class="card-header">
+            <div>
+              <h3>Indian State Public Finance Map / Cards</h3>
+              <p>State-wise revenue, expenditure, fiscal deficit & debt</p>
+            </div>
+          </div>
+          <div class="state-cards-grid" id="state-map-chips">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- Line Chart: Total State Revenue vs Expenditure over Year -->
+        <div class="card col-7">
+          <div class="card-header">
+            <div>
+              <h3>Total State Revenue vs Expenditure Over Time</h3>
+              <p>Longitudinal fiscal trajectory (2014-2024)</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-state-line"></canvas>
+          </div>
+        </div>
+
+        <!-- Bar Chart: National Sector Allocation sorted descending with Sector Share % -->
+        <div class="card col-12">
+          <div class="card-header">
+            <div>
+              <h3>National Union Budget Sector Allocation</h3>
+              <p>Ranked by budget allocation (₹ Cr) with sector share % data labels</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-national-sector"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 5: PREDICTIVE ANALYTICS & WHAT-IF ENGINE (PAGE 5 SPEC) -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content" id="tab-predictive">
+      <!-- Interactive What-If Simulation Controls -->
+      <div class="whatif-panel">
+        <h3>⚡ Interactive What-If Simulation Engine</h3>
+        <p>Adjust the policy & behavioral parameters below to dynamically simulate projected micro, meso, and macro financial forecasts with 95% confidence bands.</p>
+        
+        <div class="slider-group-grid">
+          <div class="slider-item">
+            <div class="slider-label-row">
+              <span>Individual Expense Cut Target:</span>
+              <span class="slider-val-badge" id="badge-ind-cut">0%</span>
+            </div>
+            <input type="range" id="slider-ind-cut" class="range-input" min="-25" max="35" value="0" step="5">
+            <span style="font-size: 0.75rem; color: #94A3B8;">Reduce personal discretionary spending</span>
+          </div>
+
+          <div class="slider-item">
+            <div class="slider-label-row">
+              <span>Enterprise Revenue Growth Goal:</span>
+              <span class="slider-val-badge" id="badge-org-growth">0%</span>
+            </div>
+            <input type="range" id="slider-org-growth" class="range-input" min="-10" max="25" value="0" step="5">
+            <span style="font-size: 0.75rem; color: #94A3B8;">Target business revenue expansion rate</span>
+          </div>
+
+          <div class="slider-item">
+            <div class="slider-label-row">
+              <span>State Deficit Reduction Target:</span>
+              <span class="slider-val-badge" id="badge-state-deficit">0%</span>
+            </div>
+            <input type="range" id="slider-state-deficit" class="range-input" min="0" max="20" value="0" step="2">
+            <span style="font-size: 0.75rem; color: #94A3B8;">Public expenditure constraint modifier</span>
+          </div>
+        </div>
+
+        <!-- Decision Takeaway Box -->
+        <div class="decision-takeaway-box">
+          <h4>💡 Decision-Making Implications (Analytical Interpretation & Impact)</h4>
+          <pre id="forecast-takeaway-text">Adjust sliders above to observe simulated economic impacts.</pre>
+        </div>
+      </div>
+
+      <!-- Projection Summary KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card kpi-positive">
+          <div class="kpi-title">Projected Next Month Expense</div>
+          <div class="kpi-value" id="proj-kpi-ind">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Individual Level (Jan 2025)</div>
+        </div>
+        <div class="kpi-card kpi-accent">
+          <div class="kpi-title">Projected Next Quarter Revenue</div>
+          <div class="kpi-value" id="proj-kpi-org">₹0</div>
+          <div class="kpi-subtext subtext-neutral">Organization Level (Q1 2025)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Projected Next Year Public Outlay</div>
+          <div class="kpi-value" id="proj-kpi-state">₹0</div>
+          <div class="kpi-subtext subtext-neutral">State Public Finance (2025)</div>
+        </div>
+      </div>
+
+      <!-- 3 Side-by-Side Forecast Charts with 95% Confidence Bounds -->
+      <div class="visuals-grid">
+        <!-- Chart 1: Individual Expense Forecast -->
+        <div class="card col-4">
+          <div class="card-header">
+            <div>
+              <h3>Individual Expense Forecast</h3>
+              <p>Next 6 months with 95% confidence interval</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-forecast-ind"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Organization Revenue Forecast -->
+        <div class="card col-4">
+          <div class="card-header">
+            <div>
+              <h3>Organization Revenue Forecast</h3>
+              <p>Next 4 quarters with 95% confidence interval</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-forecast-org"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: State Expenditure Forecast -->
+        <div class="card col-4">
+          <div class="card-header">
+            <div>
+              <h3>State Expenditure Forecast</h3>
+              <p>Next 3 years with 95% confidence interval</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-forecast-state"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- TAB 6: POWER BI INTEGRATION CENTER -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="tab-content" id="tab-powerbi-hub">
+      <div class="pbi-hub-grid">
+        <!-- Card 1: Clean Datasets Download -->
+        <div class="pbi-card">
+          <h3>📥 Ready-to-Load Clean Datasets</h3>
+          <p>Transformed CSVs ready for immediate Power BI Desktop import into Star Schema:</p>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <a href="/data/clean/individual_clean.csv" class="btn btn-outline btn-sm">📄 individual_clean.csv (~2,500 rows)</a>
+            <a href="/data/clean/org_clean.csv" class="btn btn-outline btn-sm">📄 org_clean.csv (~3,200 rows)</a>
+            <a href="/data/clean/state_clean.csv" class="btn btn-outline btn-sm">📄 state_clean.csv (660 rows)</a>
+            <a href="/data/clean/national_clean.csv" class="btn btn-outline btn-sm">📄 national_clean.csv (48 rows)</a>
+            <a href="/data/clean/DateTable.csv" class="btn btn-outline btn-sm">📄 DateTable.csv (2014-2025 Calendar)</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Power BI Theme & Config -->
+        <div class="pbi-card">
+          <h3>🎨 Power BI Custom Theme</h3>
+          <p>Branded JSON palette matching Navy (#1F3864), Amber (#C77F16), and Teal (#2E7D74):</p>
+          <a href="/data/powerbi/navy_amber_teal_theme.json" class="btn btn-teal btn-sm" download>⬇️ Download Theme JSON</a>
+          <p style="margin-block-start: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+            In Power BI Desktop: <strong>View → Themes → Browse for themes</strong> → Select downloaded JSON file.
+          </p>
+        </div>
+
+        <!-- Card 3: One-Click Data Sync -->
+        <div class="pbi-card">
+          <h3>⚡ One-Click Power BI Sync</h3>
+          <p>Export all current database rows (including your custom user inputs) into the Power BI CSV folders:</p>
+          <button class="btn btn-primary" onclick="api.exportAllPowerBICSVs().then(r => App.showToast(r.message, 'success'))">
+            🔄 Sync Live Database to CSVs
+          </button>
+          <p style="margin-block-start: 0.8rem; font-size: 0.8rem; color: var(--text-muted);">
+            After clicking this, simply click <strong>Refresh</strong> in Power BI Desktop to see newly added inputs!
+          </p>
+        </div>
+      </div>
+
+      <!-- DAX Code Viewer & Copy -->
+      <div class="card" style="margin-block-end: 1.5rem;">
+        <div class="card-header">
+          <div>
+            <h3>Complete DAX Measures Library</h3>
+            <p>Paste directly into Power BI <code>_Measures</code> table</p>
+          </div>
+          <button class="btn btn-accent btn-sm" id="btn-copy-dax">📋 Copy DAX Library</button>
+        </div>
+        <div class="code-snippet-box" id="dax-code-block">Loading DAX Measures...</div>
+      </div>
+
+      <!-- Power Query M Code Viewer & Copy -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Power Query M-Code Pipeline</h3>
+            <p>Advanced Editor transformations for clean ETL</p>
+          </div>
+          <button class="btn btn-accent btn-sm" id="btn-copy-pq">📋 Copy Power Query M-Code</button>
+        </div>
+        <div class="code-snippet-box" id="pq-code-block">Loading Power Query M-Code transformations...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 4. MODALS (USER INPUT FORMS) -->
+  <!-- ========================================================================= -->
+
+  <!-- Modal 1: Add Individual Transaction -->
+  <div class="modal-backdrop" id="modal-add-tx">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>+ Add Personal Transaction</h2>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-tx">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tx-date">Date *</label>
+            <input type="date" id="tx-date" class="form-control" required value="2024-10-15">
+          </div>
+          <div class="form-group">
+            <label for="tx-type">Transaction Type *</label>
+            <select id="tx-type" class="form-control" required>
+              <option value="Expense">Expense</option>
+              <option value="Income">Income</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tx-category">Category *</label>
+            <select id="tx-category" class="form-control" required>
+              <option value="Food & Dining">Food & Dining</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Housing & Rent">Housing & Rent</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Education">Education</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Personal Care">Personal Care</option>
+              <option value="Salary">Salary (Income)</option>
+              <option value="Freelance">Freelance (Income)</option>
+              <option value="Investments">Investments (Income)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tx-subcategory">Subcategory</label>
+            <input type="text" id="tx-subcategory" class="form-control" placeholder="e.g. Swiggy, Fuel, Metro">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tx-amount">Amount (₹) *</label>
+            <input type="number" id="tx-amount" class="form-control" required min="1" step="0.5" placeholder="e.g. 1500">
+          </div>
+          <div class="form-group">
+            <label for="tx-mode">Payment Mode *</label>
+            <select id="tx-mode" class="form-control" required>
+              <option value="UPI">UPI (GPay / PhonePe / Paytm)</option>
+              <option value="Card">Debit / Credit Card</option>
+              <option value="Net Banking">Net Banking</option>
+              <option value="Cash">Cash</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tx-note">Note / Description</label>
+          <input type="text" id="tx-note" class="form-control" placeholder="Optional transaction note">
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-block-start: 1rem;">
+          <button type="button" class="btn btn-outline btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Transaction</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Edit Category Budgets -->
+  <div class="modal-backdrop" id="modal-budgets">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>⚙️ Set Category Monthly Target Budget</h2>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <form id="form-category-budgets">
+        <div class="form-group">
+          <label for="budget-category-select">Select Category *</label>
+          <select id="budget-category-select" class="form-control" required>
+            <!-- Rendered by app.js -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget-amount-input">Target Monthly Budget (₹) *</label>
+          <input type="number" id="budget-amount-input" class="form-control" required min="100" step="100" placeholder="e.g. 20000">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-block-start: 1rem;">
+          <button type="button" class="btn btn-outline btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-accent">Update Budget</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: Add Enterprise Cost / Order -->
+  <div class="modal-backdrop" id="modal-add-order">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>+ Add Enterprise Cost / Order</h2>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-order">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-date">Order Date *</label>
+            <input type="date" id="order-date" class="form-control" required value="2024-10-15">
+          </div>
+          <div class="form-group">
+            <label for="order-dept">Department *</label>
+            <select id="order-dept" class="form-control" required>
+              <option value="Corporate">Corporate</option>
+              <option value="Consumer">Consumer</option>
+              <option value="Home Office">Home Office</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-region">Region *</label>
+            <select id="order-region" class="form-control" required>
+              <option value="South">South (Bengaluru, Chennai, Mysuru)</option>
+              <option value="North">North (Delhi, Noida, Jaipur)</option>
+              <option value="West">West (Mumbai, Pune, Ahmedabad)</option>
+              <option value="East">East (Kolkata, Bhubaneswar)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="order-city">City</label>
+            <input type="text" id="order-city" class="form-control" value="Bengaluru">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-category">Category *</label>
+            <select id="order-category" class="form-control" required>
+              <option value="Technology">Technology</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Office Supplies">Office Supplies</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="order-subcategory">Sub-Category *</label>
+            <input type="text" id="order-subcategory" class="form-control" required value="Phones" placeholder="e.g. Phones, Chairs, Storage">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="order-product">Product / Project Name *</label>
+          <input type="text" id="order-product" class="form-control" required value="Enterprise VoIP Hardware Set">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-sales">Sales Revenue (₹) *</label>
+            <input type="number" id="order-sales" class="form-control" required min="10" step="0.5" placeholder="e.g. 45000">
+          </div>
+          <div class="form-group">
+            <label for="order-profit">Profit (₹) *</label>
+            <input type="number" id="order-profit" class="form-control" required step="0.5" placeholder="e.g. 8500 (Cost = Sales - Profit)">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-discount">Discount (0 to 0.5)</label>
+            <input type="number" id="order-discount" class="form-control" min="0" max="0.5" step="0.05" value="0.10">
+          </div>
+          <div class="form-group">
+            <label for="order-qty">Quantity</label>
+            <input type="number" id="order-qty" class="form-control" min="1" value="2">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-block-start: 1rem;">
+          <button type="button" class="btn btn-outline btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Record Enterprise Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Application Logic Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

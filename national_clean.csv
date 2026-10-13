@@ -1,0 +1,49 @@
+id,ministry,sector,year,allocation,expenditure
+1,Ministry of Defence,Defence,2021,470951.81,465507.7
+2,Ministry of Defence,Defence,2022,516753.53,511441.43
+3,Ministry of Defence,Defence,2023,580409.87,553092.19
+4,Ministry of Defence,Defence,2024,621944.41,597013.13
+5,Ministry of Road Transport & Highways,Infrastructure,2021,213891.71,209503.57
+6,Ministry of Road Transport & Highways,Infrastructure,2022,237054.42,225871.85
+7,Ministry of Road Transport & Highways,Infrastructure,2023,255493.86,248927.79
+8,Ministry of Road Transport & Highways,Infrastructure,2024,279043.79,263995.78
+9,Ministry of Railways,Infrastructure,2021,196049.18,189117.71
+10,Ministry of Railways,Infrastructure,2022,218269.38,214148.76
+11,Ministry of Railways,Infrastructure,2023,235580.92,224746.39
+12,Ministry of Railways,Infrastructure,2024,259475.12,246880.42
+13,Ministry of Consumer Affairs & Food,Food Security & Subsidy,2021,163408.15,154886.14
+14,Ministry of Consumer Affairs & Food,Food Security & Subsidy,2022,179916.13,176278.55
+15,Ministry of Consumer Affairs & Food,Food Security & Subsidy,2023,196990.32,193318.46
+16,Ministry of Consumer Affairs & Food,Food Security & Subsidy,2024,214724.74,208853.59
+17,Ministry of Agriculture & Farmers Welfare,Agriculture,2021,100914.99,99696.54
+18,Ministry of Agriculture & Farmers Welfare,Agriculture,2022,113281.51,110634.33
+19,Ministry of Agriculture & Farmers Welfare,Agriculture,2023,123508.38,121554.17
+20,Ministry of Agriculture & Farmers Welfare,Agriculture,2024,133991.97,131022.83
+21,Ministry of Rural Development,Rural Development,2021,140726.59,137145.24
+22,Ministry of Rural Development,Rural Development,2022,149245.84,146539.32
+23,Ministry of Rural Development,Rural Development,2023,164162.79,159596.39
+24,Ministry of Rural Development,Rural Development,2024,182875.11,176413.21
+25,Ministry of Education,Human Capital & Education,2021,95636.53,92544.22
+26,Ministry of Education,Human Capital & Education,2022,106791.23,104873.5
+27,Ministry of Education,Human Capital & Education,2023,116944.28,115235.84
+28,Ministry of Education,Human Capital & Education,2024,126524.31,122000.12
+29,Ministry of Health & Family Welfare,Healthcare,2021,68614.42,67697.68
+30,Ministry of Health & Family Welfare,Healthcare,2022,74352.71,73412.34
+31,Ministry of Health & Family Welfare,Healthcare,2023,83028.75,79026.92
+32,Ministry of Health & Family Welfare,Healthcare,2024,88797.63,86652.91
+33,Ministry of Home Affairs,Internal Security,2021,153312.48,147417.97
+34,Ministry of Home Affairs,Internal Security,2022,167344.5,158432.29
+35,Ministry of Home Affairs,Internal Security,2023,183478.51,178457.44
+36,Ministry of Home Affairs,Internal Security,2024,198177.61,194745.59
+37,Ministry of Communications & IT,Technology & Telecom,2021,89263.64,85060.83
+38,Ministry of Communications & IT,Technology & Telecom,2022,97623.62,92073.96
+39,Ministry of Communications & IT,Technology & Telecom,2023,104463.83,100828.0
+40,Ministry of Communications & IT,Technology & Telecom,2024,116629.46,113569.23
+41,Ministry of Power & Renewable Energy,Energy Transition,2021,64427.26,63650.39
+42,Ministry of Power & Renewable Energy,Energy Transition,2022,70552.63,66970.44
+43,Ministry of Power & Renewable Energy,Energy Transition,2023,78224.45,73806.32
+44,Ministry of Power & Renewable Energy,Energy Transition,2024,84697.24,80511.28
+45,Ministry of Housing & Urban Affairs,Urban Development,2021,63193.91,60506.2
+46,Ministry of Housing & Urban Affairs,Urban Development,2022,68799.38,65840.99
+47,Ministry of Housing & Urban Affairs,Urban Development,2023,75168.71,73128.78
+48,Ministry of Housing & Urban Affairs,Urban Development,2024,81738.59,78995.61

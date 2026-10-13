@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power BI Model — BUDGETRIX</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="bx-app-container">
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX DARK LEFT SIDEBAR -->
+    <!-- ======================================================================= -->
+    <aside class="bx-sidebar" id="bx-sidebar">
+      <div>
+        <!-- Brand -->
+        <a href="/dashboard" class="bx-brand">
+          <div class="bx-logo-box">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          </div>
+          <span class="bx-brand-title">BUDGETRIX</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="bx-nav-list">
+          <li>
+            <a href="/overview" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </span>
+              <span class="bx-nav-text">Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="/individual" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span class="bx-nav-text">Individual</span>
+            </a>
+          </li>
+          <li>
+            <a href="/organization" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 18h6v3H9z"/></svg>
+              </span>
+              <span class="bx-nav-text">Organization</span>
+            </a>
+          </li>
+          <li>
+            <a href="/state-nation" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="bx-nav-text">State / Nation</span>
+            </a>
+          </li>
+          <li>
+            <a href="/predictive" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </span>
+              <span class="bx-nav-text">Predictive</span>
+            </a>
+          </li>
+          <li>
+            <a href="/powerbi" class="bx-nav-link active">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </span>
+              <span class="bx-nav-text" style="font-weight: 700; letter-spacing: 0.04em;">POWER BI MODEL</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bottom Status & Collapse -->
+      <div class="bx-sidebar-bottom">
+        <div class="bx-status-box">
+          <div class="bx-status-label">STATUS</div>
+          <div class="bx-status-text">
+            <span class="bx-status-dot green" id="bx-sidebar-dot"></span>
+            <span id="bx-sidebar-status">Pipeline Connected</span>
+          </div>
+        </div>
+        <button type="button" class="bx-collapse-btn" onclick="toggleSidebar()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span class="bx-collapse-label">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX MAIN CONTENT -->
+    <!-- ======================================================================= -->
+    <main class="bx-main">
+
+      <!-- Top Row: Breadcrumb & User Pill -->
+      <div class="bx-top-bar">
+        <div class="bx-breadcrumb">
+          MULTI-LEVEL BUDGET TRACKER / POWER BI STAR SCHEMA
+        </div>
+        <div id="header-user-container">
+          <!-- Rendered by auth.js -->
+        </div>
+      </div>
+
+      <!-- Page Title & Subtitle -->
+      <h1 class="bx-page-title">Power BI Enterprise Architecture</h1>
+      <p class="bx-page-subtitle">
+        Star Schema relational model, DAX business measures repository, and automated CSV export pipeline for Microsoft Power BI Desktop & Service.
+      </p>
+
+      <!-- Action Row -->
+      <div class="bx-action-row">
+        <button class="bx-btn-coral" id="btn-export-all-pbi-page" onclick="handleExportCSVs()">
+          ⚡ Export All Power BI CSVs
+        </button>
+        <div class="bx-badge-green">
+          <span>●</span> <span>Automated Star Schema Sync Active</span>
+        </div>
+      </div>
+
+      <!-- Blue Callout Card -->
+      <div class="bx-callout-blue">
+        <div class="bx-callout-title">Direct Ingestion into Power BI Desktop</div>
+        <div class="bx-callout-text">
+          Exported datasets adhere to a 1:Many Star Schema connecting Fact tables (<code>Fact_Individual</code>, <code>Fact_Organization</code>, <code>Fact_StateFinance</code>) to shared Dimension tables (<code>Dim_Date</code>, <code>Dim_Category</code>). In Power BI Desktop, use <strong>Get Data &rarr; Text/CSV</strong> or connect directly to SQLite.
+        </div>
+      </div>
+
+      <!-- Star Schema Entities Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
+        
+        <!-- Fact Individual -->
+        <div style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-top: 3px solid var(--bx-coral); padding: 1.25rem; border-radius: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #FFFFFF; font-size: 0.95rem;">Fact_Individual</strong>
+            <span class="bx-badge-amber" style="font-size: 0.68rem; padding: 0.15rem 0.5rem;">FACT TABLE</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--bx-text-muted); margin-bottom: 1rem;">
+            Grain: One record per individual financial transaction.
+          </p>
+          <div style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--bx-cyan); background: var(--bx-bg-elevated); padding: 0.5rem; border-radius: 4px; margin-bottom: 0.85rem;">
+            Keys: DateKey, CategoryKey | Measures: Amount, IncomeExpense
+          </div>
+          <a href="/api/powerbi/download/individual" class="bx-btn-coral" style="padding: 0.4rem 0.8rem; font-size: 0.78rem; text-decoration: none; width: 100%; justify-content: center;">
+            ⬇ Download individual_clean.csv
+          </a>
+        </div>
+
+        <!-- Fact Organization -->
+        <div style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-top: 3px solid #818CF8; padding: 1.25rem; border-radius: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #FFFFFF; font-size: 0.95rem;">Fact_Organization</strong>
+            <span class="bx-badge-amber" style="font-size: 0.68rem; padding: 0.15rem 0.5rem;">FACT TABLE</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--bx-text-muted); margin-bottom: 1rem;">
+            Grain: One record per enterprise Superstore cost order.
+          </p>
+          <div style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--bx-cyan); background: var(--bx-bg-elevated); padding: 0.5rem; border-radius: 4px; margin-bottom: 0.85rem;">
+            Keys: OrderDateKey, DepartmentKey | Measures: Sales, Cost, Profit
+          </div>
+          <a href="/api/powerbi/download/organization" class="bx-btn-coral" style="padding: 0.4rem 0.8rem; font-size: 0.78rem; text-decoration: none; width: 100%; justify-content: center;">
+            ⬇ Download organization_clean.csv
+          </a>
+        </div>
+
+        <!-- Fact State Finance -->
+        <div style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-top: 3px solid var(--bx-cyan); padding: 1.25rem; border-radius: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: #FFFFFF; font-size: 0.95rem;">Fact_StateFinance</strong>
+            <span class="bx-badge-amber" style="font-size: 0.68rem; padding: 0.15rem 0.5rem;">FACT TABLE</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--bx-text-muted); margin-bottom: 1rem;">
+            Grain: Annual public finance metrics per Indian state.
+          </p>
+          <div style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--bx-cyan); background: var(--bx-bg-elevated); padding: 0.5rem; border-radius: 4px; margin-bottom: 0.85rem;">
+            Keys: StateKey, YearKey | Measures: GSDP, Revenue, FiscalDeficit
+          </div>
+          <a href="/api/powerbi/download/state-nation" class="bx-btn-coral" style="padding: 0.4rem 0.8rem; font-size: 0.78rem; text-decoration: none; width: 100%; justify-content: center;">
+            ⬇ Download state_finance_clean.csv
+          </a>
+        </div>
+
+      </div>
+
+      <!-- DAX Formula Library Card -->
+      <div class="card" style="margin-bottom: 3rem;">
+        <div class="card-header">
+          <div>
+            <h3>Pre-Built DAX Measures Library</h3>
+            <p>Paste directly into Power BI Desktop Model View to calculate business metrics</p>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" id="btn-copy-dax" onclick="copyDaxCode()">
+            📋 Copy All DAX Measures
+          </button>
+        </div>
+        <div style="background: var(--bx-bg-elevated); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--bx-border-subtle); font-family: var(--font-mono); font-size: 0.82rem; color: #E2E8F0; line-height: 1.6; max-height: 380px; overflow-y: auto;">
+          <pre id="dax-code-block">
+// -------------------------------------------------------------
+// TIER 1: INDIVIDUAL MEASURES
+// -------------------------------------------------------------
+Total Income = 
+CALCULATE(
+    SUM('Fact_Individual'[Amount]),
+    'Fact_Individual'[IncomeExpense] = "Income"
+)
+
+Total Expenses = 
+CALCULATE(
+    SUM('Fact_Individual'[Amount]),
+    'Fact_Individual'[IncomeExpense] = "Expense"
+)
+
+Net Savings = [Total Income] - [Total Expenses]
+
+Savings Rate % = 
+DIVIDE([Net Savings], [Total Income], 0) * 100
+
+// -------------------------------------------------------------
+// TIER 2: ORGANIZATION MEASURES
+// -------------------------------------------------------------
+Total Sales = SUM('Fact_Organization'[Sales])
+
+Operating Cost = SUM('Fact_Organization'[Cost])
+
+Operating Profit = SUM('Fact_Organization'[Profit])
+
+Operating Profit Margin % = 
+DIVIDE([Operating Profit], [Total Sales], 0) * 100
+
+// -------------------------------------------------------------
+// TIER 3: STATE & NATION MEASURES
+// -------------------------------------------------------------
+State Fiscal Deficit % of GSDP = 
+DIVIDE(
+    SUM('Fact_StateFinance'[FiscalDeficit]),
+    SUM('Fact_StateFinance'[GSDP]),
+    0
+) * 100
+
+FRBM Compliance Flag = 
+IF([State Fiscal Deficit % of GSDP] <= 3.0, "Compliant", "Non-Compliant")
+          </pre>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sb = document.getElementById("bx-sidebar");
+      if (sb) sb.classList.toggle("collapsed");
+    }
+
+    async function handleExportCSVs() {
+      try {
+        const btn = document.getElementById("btn-export-all-pbi-page");
+        btn.disabled = true;
+        btn.innerText = "⏳ Synchronizing...";
+        const res = await api.exportAllPowerBICSVs();
+        alert(res.message || "Power BI CSV datasets synchronized successfully!");
+      } catch (e) {
+        alert("Sync error: " + e.message);
+      } finally {
+        const btn = document.getElementById("btn-export-all-pbi-page");
+        btn.disabled = false;
+        btn.innerText = "⚡ Export All Power BI CSVs";
+      }
+    }
+
+    function copyDaxCode() {
+      const code = document.getElementById("dax-code-block").innerText;
+      navigator.clipboard.writeText(code);
+      alert("DAX Measures Library copied to clipboard!");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      Auth.renderUserBadge();
+    });
+  </script>
+</body>
+</html>

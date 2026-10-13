@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Analytics — BUDGETRIX</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="bx-app-container">
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX DARK LEFT SIDEBAR -->
+    <!-- ======================================================================= -->
+    <aside class="bx-sidebar" id="bx-sidebar">
+      <div>
+        <!-- Brand -->
+        <a href="/dashboard" class="bx-brand">
+          <div class="bx-logo-box">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          </div>
+          <span class="bx-brand-title">BUDGETRIX</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="bx-nav-list">
+          <li>
+            <a href="/overview" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </span>
+              <span class="bx-nav-text">Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="/individual" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span class="bx-nav-text">Individual</span>
+            </a>
+          </li>
+          <li>
+            <a href="/organization" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 18h6v3H9z"/></svg>
+              </span>
+              <span class="bx-nav-text">Organization</span>
+            </a>
+          </li>
+          <li>
+            <a href="/state-nation" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="bx-nav-text">State / Nation</span>
+            </a>
+          </li>
+          <li>
+            <a href="/predictive" class="bx-nav-link active">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </span>
+              <span class="bx-nav-text" style="font-weight: 700; letter-spacing: 0.04em;">PREDICTIVE</span>
+            </a>
+          </li>
+          <li>
+            <a href="/powerbi" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </span>
+              <span class="bx-nav-text">Power BI Model</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bottom Status & Collapse -->
+      <div class="bx-sidebar-bottom">
+        <div class="bx-status-box">
+          <div class="bx-status-label">STATUS</div>
+          <div class="bx-status-text">
+            <span class="bx-status-dot green" id="bx-sidebar-dot"></span>
+            <span id="bx-sidebar-status">Forecast Engine Online</span>
+          </div>
+        </div>
+        <button type="button" class="bx-collapse-btn" onclick="toggleSidebar()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span class="bx-collapse-label">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX MAIN CONTENT -->
+    <!-- ======================================================================= -->
+    <main class="bx-main">
+
+      <!-- Top Row: Breadcrumb & User Pill -->
+      <div class="bx-top-bar">
+        <div class="bx-breadcrumb">
+          MULTI-LEVEL BUDGET TRACKER / PREDICTIVE STUDIO
+        </div>
+        <div id="header-user-container">
+          <!-- Rendered by auth.js -->
+        </div>
+      </div>
+
+      <!-- Page Title & Subtitle -->
+      <h1 class="bx-page-title">Predictive & What-If Studio</h1>
+      <p class="bx-page-subtitle">
+        Holt-Winters statistical forecasting and real-time behavioral sensitivity sliders across personal, corporate, and sovereign finances.
+      </p>
+
+      <!-- Action Row -->
+      <div class="bx-action-row">
+        <div class="bx-badge-green">
+          <span>●</span> <span>Holt-Winters Exponential Smoothing Active</span>
+        </div>
+      </div>
+
+      <!-- Blue Callout Card -->
+      <div class="bx-callout-blue">
+        <div class="bx-callout-title">Interactive What-If Behavioral Engine</div>
+        <div class="bx-callout-text">
+          Adjust the policy sliders below to simulate prospective cashflows, corporate expansion, or fiscal consolidation. Curves update in real time with 95% confidence intervals.
+        </div>
+      </div>
+
+      <!-- Interactive What-If Sliders Card -->
+      <div class="card" style="margin-bottom: 2rem; background: var(--bx-bg-card); border-color: rgba(99, 102, 241, 0.3);">
+        <div class="card-header">
+          <div>
+            <h3 style="color: #FFFFFF; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>🎛️</span> Multi-Tier Behavioral Sensitivity Sliders
+            </h3>
+            <p>Slide any parameter to see the ripple effect on future financial horizons.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <!-- Slider 1 -->
+          <div style="background: var(--bx-bg-elevated); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--bx-border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+              <label for="slider-ind-cut" style="font-weight: 700; font-size: 0.88rem; color: #FFFFFF;">
+                👤 Personal Spend Cut Target:
+              </label>
+              <span class="bx-badge-amber" id="badge-ind-cut">0%</span>
+            </div>
+            <input type="range" id="slider-ind-cut" min="-25" max="35" value="0" step="5" style="width: 100%;">
+            <small style="color: var(--bx-text-muted); font-size: 0.76rem; display: block; margin-top: 0.5rem;">Discretionary spend cut % relative to current baseline</small>
+          </div>
+
+          <!-- Slider 2 -->
+          <div style="background: var(--bx-bg-elevated); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--bx-border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+              <label for="slider-org-growth" style="font-weight: 700; font-size: 0.88rem; color: #FFFFFF;">
+                🏢 Enterprise Revenue Growth:
+              </label>
+              <span class="bx-badge-amber" id="badge-org-growth">0%</span>
+            </div>
+            <input type="range" id="slider-org-growth" min="-10" max="25" value="0" step="5" style="width: 100%;">
+            <small style="color: var(--bx-text-muted); font-size: 0.76rem; display: block; margin-top: 0.5rem;">Simulated top-line sales growth target %</small>
+          </div>
+
+          <!-- Slider 3 -->
+          <div style="background: var(--bx-bg-elevated); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--bx-border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+              <label for="slider-state-deficit" style="font-weight: 700; font-size: 0.88rem; color: #FFFFFF;">
+                🇮🇳 State Deficit Adjustment:
+              </label>
+              <span class="bx-badge-amber" id="badge-state-deficit">0%</span>
+            </div>
+            <input type="range" id="slider-state-deficit" min="-2.0" max="2.0" value="0" step="0.25" style="width: 100%;">
+            <small style="color: var(--bx-text-muted); font-size: 0.76rem; display: block; margin-top: 0.5rem;">Simulated shift in state fiscal deficit % of GSDP</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generated Predictive Visuals -->
+      <div class="visuals-grid" style="margin-bottom: 3rem;">
+        <div class="card col-12">
+          <div class="card-header">
+            <div>
+              <h3>Individual Cashflow & Savings Forecast (12 Months Ahead)</h3>
+              <p>Holt-Winters projection with 95% confidence intervals and user spend cut simulation</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-predict-ind"></canvas>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Enterprise Sales & Margin Trajectory (4 Quarters)</h3>
+              <p>Dynamic corporate cost center margin projections</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-predict-org"></canvas>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>State Fiscal Deficit Path vs. FRBM 3.0% Benchmark</h3>
+              <p>Projected compliance under fiscal consolidation policies</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-predict-state"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sb = document.getElementById("bx-sidebar");
+      if (sb) sb.classList.toggle("collapsed");
+    }
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      Auth.renderUserBadge();
+      App.bindWhatIfSliders();
+      await App.loadPredictive();
+    });
+  </script>
+</body>
+</html>

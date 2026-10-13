@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUDGETRIX — Multi-Level Budget Tracker Analytics</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body style="background-color: var(--bx-bg-base); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- ========================================================================= -->
+  <!-- TOP BUDGETRIX BAR -->
+  <!-- ========================================================================= -->
+  <header style="background: rgba(9, 13, 21, 0.9); border-bottom: 1px solid var(--bx-border-subtle); padding: 1rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px);">
+    <a href="/login" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+      <div class="bx-logo-box">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+      </div>
+      <span class="bx-brand-title">BUDGETRIX</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div id="header-user-container">
+        <!-- Rendered by auth.js -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN LANDING & AUTHENTICATION PORTAL -->
+  <!-- ========================================================================= -->
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;">
+    <div style="max-width: 1180px; width: 100%; display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; align-items: center;">
+      
+      <!-- LEFT: PROJECT TITLE, DESCRIPTION & MODES OVERVIEW -->
+      <div>
+        <div class="bx-breadcrumb">
+          MULTI-LEVEL BUDGET TRACKER / 2025
+        </div>
+        <h1 class="bx-page-title" style="font-size: 2.85rem; margin-bottom: 1rem;">
+          Cross-Tier Financial Intelligence
+        </h1>
+        <p class="bx-page-subtitle" style="font-size: 1.05rem; margin-bottom: 2rem;">
+          Analyze personal household cashflows, enterprise cost centers, and sovereign public finances. Enter your own numbers in the interactive studios to generate real-time visual analytics.
+        </p>
+
+        <!-- 3 Modes Cards -->
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+          <div style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-left: 4px solid var(--bx-coral); padding: 1rem 1.25rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <strong style="color: #FFFFFF; font-size: 1.02rem;">👤 Micro: Individual Mode</strong>
+              <span style="font-size: 0.72rem; color: var(--bx-coral); font-family: var(--font-mono); font-weight: 700;">USER INPUT STUDIO</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--bx-text-muted); margin-top: 0.35rem;">
+              Personal income modeling, 10 spending categories, budget targets vs. actuals, and savings rate calculation.
+            </p>
+          </div>
+
+          <div style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-left: 4px solid #818CF8; padding: 1rem 1.25rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <strong style="color: #FFFFFF; font-size: 1.02rem;">🏢 Meso: Organization Mode</strong>
+              <span style="font-size: 0.72rem; color: #818CF8; font-family: var(--font-mono); font-weight: 700;">USER INPUT STUDIO</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--bx-text-muted); margin-top: 0.35rem;">
+              Enterprise departmental budget planning, sales vs. cost dynamics, profit margins, and operational burn tracking.
+            </p>
+          </div>
+
+          <div style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-left: 4px solid var(--bx-cyan); padding: 1rem 1.25rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <strong style="color: #FFFFFF; font-size: 1.02rem;">🇮🇳 Macro: State & Nation Mode</strong>
+              <span style="font-size: 0.72rem; color: var(--bx-cyan); font-family: var(--font-mono); font-weight: 700;">OFFICIAL MACRO DATA</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--bx-text-muted); margin-top: 0.35rem;">
+              Sovereign public finance repository spanning Indian states fiscal deficits (% of GSDP), FRBM compliance, and Union Budget allocations.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <span class="bx-badge-amber">⚡ Dynamic User Input Studios</span>
+          <span class="bx-badge-amber">📊 Power BI Star Schema</span>
+          <span class="bx-badge-amber">📈 Holt-Winters Forecasting</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: LOGIN & REGISTRATION CARD -->
+      <div style="background: var(--bx-bg-sidebar); border: 1px solid var(--bx-border-subtle); border-radius: 14px; padding: 2.25rem; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);">
+        
+        <!-- Tab Switcher -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--bx-border-subtle); padding-bottom: 0.75rem;">
+          <button type="button" class="auth-tab-link active" id="tab-btn-signin" onclick="showAuthTab('signin')" style="background: transparent; border: none; font-size: 1.05rem; font-weight: 700; color: #FFFFFF; padding: 0.5rem 1rem; cursor: pointer; border-bottom: 2px solid var(--bx-coral); transition: all 0.15s;">
+            Sign In
+          </button>
+          <button type="button" class="auth-tab-link" id="tab-btn-register" onclick="showAuthTab('register')" style="background: transparent; border: none; font-size: 1.05rem; font-weight: 600; color: var(--bx-text-muted); padding: 0.5rem 1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s;">
+            Create Account
+          </button>
+        </div>
+
+        <!-- Alert Banner -->
+        <div id="auth-alert" class="auth-alert" style="display: none; margin-bottom: 1.25rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem;"></div>
+
+        <!-- SIGN IN FORM -->
+        <form id="form-signin" onsubmit="handleSignIn(event)">
+          <div class="form-group-clean" style="margin-bottom: 1.25rem;">
+            <label for="signin-username" style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem;">
+              Username or ID
+            </label>
+            <input type="text" id="signin-username" class="form-control-clean" placeholder="Enter username (e.g. user, admin, guest)" required autocomplete="username" style="width: 100%; padding: 0.7rem 0.9rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 8px; color: #FFFFFF; font-size: 0.9rem;">
+          </div>
+
+          <div class="form-group-clean" style="margin-bottom: 1.5rem;">
+            <label for="signin-password" style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem;">
+              Password
+            </label>
+            <input type="password" id="signin-password" class="form-control-clean" placeholder="Enter password" required autocomplete="current-password" style="width: 100%; padding: 0.7rem 0.9rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 8px; color: #FFFFFF; font-size: 0.9rem;">
+          </div>
+
+          <button type="submit" id="btn-signin-submit" class="bx-btn-coral" style="width: 100%; justify-content: center; padding: 0.8rem; font-size: 0.95rem;">
+            Sign In to Dashboard &rarr;
+          </button>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="form-register" style="display: none;" onsubmit="handleRegister(event)">
+          <div class="form-group-clean" style="margin-bottom: 1rem;">
+            <label for="reg-fullname" style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem;">Full Name</label>
+            <input type="text" id="reg-fullname" class="form-control-clean" placeholder="e.g. Jane Doe" required style="width: 100%; padding: 0.7rem 0.9rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 8px; color: #FFFFFF;">
+          </div>
+
+          <div class="form-group-clean" style="margin-bottom: 1rem;">
+            <label for="reg-username" style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem;">Desired Username</label>
+            <input type="text" id="reg-username" class="form-control-clean" placeholder="e.g. janedoe" required minlength="3" style="width: 100%; padding: 0.7rem 0.9rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 8px; color: #FFFFFF;">
+          </div>
+
+          <div class="form-group-clean" style="margin-bottom: 1rem;">
+            <label for="reg-role" style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem;">Account Access Role</label>
+            <select id="reg-role" class="form-control-clean" style="width: 100%; padding: 0.7rem 0.9rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 8px; color: #FFFFFF;">
+              <option value="User">User</option>
+              <option value="Admin">Admin</option>
+              <option value="Guest">Guest</option>
+            </select>
+          </div>
+
+          <div class="form-group-clean" style="margin-bottom: 1.5rem;">
+            <label for="reg-password" style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem;">Password</label>
+            <input type="password" id="reg-password" class="form-control-clean" placeholder="Create password (min 4 chars)" required minlength="4" style="width: 100%; padding: 0.7rem 0.9rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 8px; color: #FFFFFF;">
+          </div>
+
+          <button type="submit" id="btn-register-submit" class="bx-btn-coral" style="width: 100%; justify-content: center; padding: 0.8rem; font-size: 0.95rem;">
+            Create Account &rarr;
+          </button>
+        </form>
+
+        <!-- EXACT 3-ROLE QUICK 1-CLICK DEMO ACCESS -->
+        <div style="display: flex; align-items: center; margin: 1.75rem 0 1.25rem 0; gap: 0.75rem;">
+          <div style="flex: 1; height: 1px; background: var(--bx-border-subtle);"></div>
+          <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--bx-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+            Quick 1-Click Access
+          </span>
+          <div style="flex: 1; height: 1px; background: var(--bx-border-subtle);"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem;">
+          <button type="button" onclick="handleDemoLogin('admin')" style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); padding: 0.65rem 0.4rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.15s; color: #FFFFFF;" onmouseover="this.style.borderColor='var(--bx-coral)'" onmouseout="this.style.borderColor='var(--bx-border-subtle)'">
+            <div style="font-size: 1.1rem; margin-bottom: 0.2rem;">🏢</div>
+            <strong style="display: block; font-size: 0.82rem;">Admin</strong>
+            <small style="color: var(--bx-text-muted); font-size: 0.7rem; font-family: var(--font-mono);">admin123</small>
+          </button>
+
+          <button type="button" onclick="handleDemoLogin('user')" style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); padding: 0.65rem 0.4rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.15s; color: #FFFFFF;" onmouseover="this.style.borderColor='var(--bx-coral)'" onmouseout="this.style.borderColor='var(--bx-border-subtle)'">
+            <div style="font-size: 1.1rem; margin-bottom: 0.2rem;">👤</div>
+            <strong style="display: block; font-size: 0.82rem;">User</strong>
+            <small style="color: var(--bx-text-muted); font-size: 0.7rem; font-family: var(--font-mono);">user123</small>
+          </button>
+
+          <button type="button" onclick="handleDemoLogin('guest')" style="background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); padding: 0.65rem 0.4rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.15s; color: #FFFFFF;" onmouseover="this.style.borderColor='var(--bx-coral)'" onmouseout="this.style.borderColor='var(--bx-border-subtle)'">
+            <div style="font-size: 1.1rem; margin-bottom: 0.2rem;">🌐</div>
+            <strong style="display: block; font-size: 0.82rem;">Guest</strong>
+            <small style="color: var(--bx-text-muted); font-size: 0.7rem; font-family: var(--font-mono);">guest123</small>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid var(--bx-border-subtle); padding: 1.5rem 2.5rem; text-align: center; font-size: 0.8rem; color: var(--bx-text-muted);">
+    <p>BUDGETRIX &bull; Multi-Level Budget Tracker Analytics Platform &bull; Data Visualization Lab</p>
+  </footer>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script>
+    function showAuthTab(tab) {
+      const signinForm = document.getElementById("form-signin");
+      const registerForm = document.getElementById("form-register");
+      const signinBtn = document.getElementById("tab-btn-signin");
+      const registerBtn = document.getElementById("tab-btn-register");
+      const alertBox = document.getElementById("auth-alert");
+      alertBox.style.display = "none";
+
+      if (tab === "signin") {
+        signinForm.style.display = "block";
+        registerForm.style.display = "none";
+        signinBtn.style.color = "#FFFFFF";
+        signinBtn.style.borderBottomColor = "var(--bx-coral)";
+        registerBtn.style.color = "var(--bx-text-muted)";
+        registerBtn.style.borderBottomColor = "transparent";
+      } else {
+        signinForm.style.display = "none";
+        registerForm.style.display = "block";
+        registerBtn.style.color = "#FFFFFF";
+        registerBtn.style.borderBottomColor = "var(--bx-coral)";
+        signinBtn.style.color = "var(--bx-text-muted)";
+        signinBtn.style.borderBottomColor = "transparent";
+      }
+    }
+
+    function showAlert(msg, isSuccess = false) {
+      const alertBox = document.getElementById("auth-alert");
+      alertBox.style.background = isSuccess ? "rgba(16, 185, 129, 0.15)" : "rgba(244, 63, 94, 0.15)";
+      alertBox.style.border = isSuccess ? "1px solid rgba(16, 185, 129, 0.35)" : "1px solid rgba(244, 63, 94, 0.35)";
+      alertBox.style.color = isSuccess ? "#10B981" : "#F43F5E";
+      alertBox.textContent = msg;
+      alertBox.style.display = "block";
+    }
+
+    // Auto-redirect if already authenticated
+    window.addEventListener("DOMContentLoaded", () => {
+      const user = Auth.getUser();
+      if (user) {
+        showAlert(`Logged in as ${user.full_name} (${user.role}). Redirecting to Dashboard...`, true);
+        setTimeout(() => {
+          window.location.href = "/dashboard";
+        }, 600);
+      }
+    });
+
+    async function handleSignIn(e) {
+      e.preventDefault();
+      const u = document.getElementById("signin-username").value.trim();
+      const p = document.getElementById("signin-password").value;
+      const submitBtn = document.getElementById("btn-signin-submit");
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.innerText = "⏳ Authenticating...";
+        const res = await api.login(u, p);
+        if (res.success) {
+          Auth.setUser(res.user);
+          showAlert(`Welcome, ${res.user.full_name}! Redirecting...`, true);
+          setTimeout(() => {
+            window.location.href = "/dashboard";
+          }, 500);
+        } else {
+          showAlert(res.error || "Login failed.");
+        }
+      } catch (err) {
+        showAlert(err.message || "Invalid credentials. Use one of the quick 1-click roles below.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Sign In to Dashboard →";
+      }
+    }
+
+    async function handleRegister(e) {
+      e.preventDefault();
+      const fullName = document.getElementById("reg-fullname").value.trim();
+      const username = document.getElementById("reg-username").value.trim();
+      const role = document.getElementById("reg-role").value;
+      const password = document.getElementById("reg-password").value;
+      const submitBtn = document.getElementById("btn-register-submit");
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.innerText = "⏳ Creating account...";
+        const res = await api.register(username, password, fullName, role);
+        if (res.success) {
+          Auth.setUser(res.user);
+          showAlert("Account created! Redirecting...", true);
+          setTimeout(() => {
+            window.location.href = "/dashboard";
+          }, 600);
+        } else {
+          showAlert(res.error || "Registration failed.");
+        }
+      } catch (err) {
+        showAlert(err.message || "Failed to create account.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Create Account →";
+      }
+    }
+
+    async function handleDemoLogin(role) {
+      try {
+        showAlert(`Authenticating as ${role.toUpperCase()}...`, true);
+        const res = await api.demoLogin(role);
+        if (res.success) {
+          Auth.setUser(res.user);
+          showAlert(`Signed in as ${res.user.role}! Redirecting...`, true);
+          setTimeout(() => {
+            window.location.href = "/dashboard";
+          }, 500);
+        }
+      } catch (err) {
+        showAlert("Login failed: " + err.message);
+      }
+    }
+  </script>
+</body>
+</html>

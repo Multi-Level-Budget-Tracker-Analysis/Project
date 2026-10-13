@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization Analytics — BUDGETRIX</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="bx-app-container">
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX DARK LEFT SIDEBAR -->
+    <!-- ======================================================================= -->
+    <aside class="bx-sidebar" id="bx-sidebar">
+      <div>
+        <!-- Brand -->
+        <a href="/dashboard" class="bx-brand">
+          <div class="bx-logo-box">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          </div>
+          <span class="bx-brand-title">BUDGETRIX</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="bx-nav-list">
+          <li>
+            <a href="/overview" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </span>
+              <span class="bx-nav-text">Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="/individual" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span class="bx-nav-text">Individual</span>
+            </a>
+          </li>
+          <li>
+            <a href="/organization" class="bx-nav-link active">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 18h6v3H9z"/></svg>
+              </span>
+              <span class="bx-nav-text" style="font-weight: 700; letter-spacing: 0.04em;">ORGANIZATION</span>
+            </a>
+          </li>
+          <li>
+            <a href="/state-nation" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="bx-nav-text">State / Nation</span>
+            </a>
+          </li>
+          <li>
+            <a href="/predictive" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </span>
+              <span class="bx-nav-text">Predictive</span>
+            </a>
+          </li>
+          <li>
+            <a href="/powerbi" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </span>
+              <span class="bx-nav-text">Power BI Model</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bottom Status & Collapse -->
+      <div class="bx-sidebar-bottom">
+        <div class="bx-status-box">
+          <div class="bx-status-label">STATUS</div>
+          <div class="bx-status-text">
+            <span class="bx-status-dot" id="bx-sidebar-dot"></span>
+            <span id="bx-sidebar-status">Sample data feed</span>
+          </div>
+        </div>
+        <button type="button" class="bx-collapse-btn" onclick="toggleSidebar()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span class="bx-collapse-label">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX MAIN CONTENT -->
+    <!-- ======================================================================= -->
+    <main class="bx-main">
+
+      <!-- Top Row: Breadcrumb & User Pill -->
+      <div class="bx-top-bar">
+        <div class="bx-breadcrumb">
+          MULTI-LEVEL BUDGET TRACKER / <span id="current-year-display">2025</span>
+        </div>
+        <div id="header-user-container">
+          <!-- Rendered by auth.js -->
+        </div>
+      </div>
+
+      <!-- Page Title & Subtitle -->
+      <h1 class="bx-page-title">Organization Analytics</h1>
+      <p class="bx-page-subtitle">
+        Enterprise cost center dynamics, departmental budget vs spend, profit margins, and operational burn rate.
+      </p>
+
+      <!-- Action Row: Coral CTA, Year Picker, Amber Status Badge -->
+      <div class="bx-action-row">
+        <button type="button" class="bx-btn-coral" id="btn-org-action-cta" onclick="handleOrgCtaClick()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span id="btn-org-cta-text">+ Add Cost & Sales Inputs</span>
+        </button>
+
+        <div class="bx-year-selector">
+          <span class="bx-year-label">YEAR</span>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2021', this)">2021</button>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2022', this)">2022</button>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2023', this)">2023</button>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2024', this)">2024</button>
+          <button type="button" class="bx-year-btn active" onclick="switchYear('2025', this)">2025</button>
+        </div>
+
+        <div class="bx-badge-amber" id="bx-data-status-badge">
+          <span>●</span> <span id="bx-badge-text">Sample fallback data</span>
+        </div>
+      </div>
+
+      <!-- Blue Callout Card -->
+      <div class="bx-callout-blue">
+        <div class="bx-callout-title">Want outputs from your own enterprise numbers?</div>
+        <div class="bx-callout-text">
+          Enter departmental budgets and costs below or upload order batches. All charts and margin analyses recalculate instantly.
+        </div>
+      </div>
+
+      <!-- 3 Summary Insights Columns -->
+      <div class="bx-insights-grid">
+        <div class="bx-insight-col">
+          <div class="bx-insight-title">Where the money goes</div>
+          <div class="bx-insight-desc" id="org-insight-cost">
+            Corporate division is the largest cost driver at ₹108M (52.7% of total operational spend).
+          </div>
+        </div>
+
+        <div class="bx-insight-col">
+          <div class="bx-insight-title">Plan vs reality</div>
+          <div class="bx-insight-desc" id="org-insight-margin">
+            Operating cost is 74.5% of total gross sales — comfortably below the 80% ceiling limit.
+          </div>
+        </div>
+
+        <div class="bx-insight-col">
+          <div class="bx-insight-title">What you kept</div>
+          <div class="bx-insight-desc" id="org-insight-profit">
+            Total sales generated ₹68M in net operating margin, yielding an overall 24.9% profit return.
+          </div>
+        </div>
+      </div>
+
+      <!-- Top KPI Cards Row -->
+      <div class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="kpi-card border-teal">
+          <div class="kpi-label">Total Enterprise Sales / Revenue</div>
+          <div class="kpi-value" id="org-kpi-sales">₹0</div>
+          <div class="kpi-subtext">Aggregated Superstore Model</div>
+        </div>
+        <div class="kpi-card border-navy">
+          <div class="kpi-label">Operating Expenses / Cost</div>
+          <div class="kpi-value" id="org-kpi-cost">₹0</div>
+          <div class="kpi-subtext">Formula: <code>Cost = Sales - Profit</code></div>
+        </div>
+        <div class="kpi-card border-amber">
+          <div class="kpi-label">Net Operating Profit</div>
+          <div class="kpi-value" id="org-kpi-profit">₹0</div>
+          <div class="kpi-subtext">Budget Variance: <code>Sales - Cost</code></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Operating Profit Margin %</div>
+          <div class="kpi-value" id="org-kpi-margin">0%</div>
+          <div class="kpi-subtext">Return on Operational Spending</div>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- INTERACTIVE DEPARTMENT SIMULATOR STUDIO -->
+      <!-- ===================================================================== -->
+      <div class="card" id="org-studio-card" style="margin-bottom: 2rem; border-color: rgba(99, 102, 241, 0.3);">
+        <div class="card-header">
+          <div>
+            <h3 style="color: #FFFFFF; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>🏢</span> Departmental Cost Center & Margin Simulator
+            </h3>
+            <p>Model enterprise sales vs cost allocations across Corporate, Consumer, and Home Office divisions.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.applyOrgPreset('superstore')">🛒 Superstore Retail</button>
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.applyOrgPreset('saas')">☁️ SaaS Enterprise</button>
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.applyOrgPreset('manufacturing')">🏭 Manufacturing</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+          <!-- Corporate -->
+          <div style="background: var(--bx-bg-elevated); border: 1px solid var(--bx-border-subtle); padding: 1.25rem; border-radius: 8px;">
+            <div style="font-weight: 700; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.75rem;">🏢 Corporate Division</div>
+            <div style="margin-bottom: 0.75rem;">
+              <label for="input-dept-corp-rev" style="display: block; font-size: 0.78rem; color: var(--bx-text-muted); margin-bottom: 0.25rem;">Gross Revenue (₹)</label>
+              <input type="number" id="input-dept-corp-rev" class="form-control-clean" value="145000000" step="1000000">
+            </div>
+            <div>
+              <label for="input-dept-corp-cost" style="display: block; font-size: 0.78rem; color: var(--bx-text-muted); margin-bottom: 0.25rem;">Operating Cost (₹)</label>
+              <input type="number" id="input-dept-corp-cost" class="form-control-clean" value="108000000" step="1000000">
+            </div>
+          </div>
+
+          <!-- Consumer -->
+          <div style="background: var(--bx-bg-elevated); border: 1px solid var(--bx-border-subtle); padding: 1.25rem; border-radius: 8px;">
+            <div style="font-weight: 700; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.75rem;">👥 Consumer Division</div>
+            <div style="margin-bottom: 0.75rem;">
+              <label for="input-dept-cons-rev" style="display: block; font-size: 0.78rem; color: var(--bx-text-muted); margin-bottom: 0.25rem;">Gross Revenue (₹)</label>
+              <input type="number" id="input-dept-cons-rev" class="form-control-clean" value="82000000" step="1000000">
+            </div>
+            <div>
+              <label for="input-dept-cons-cost" style="display: block; font-size: 0.78rem; color: var(--bx-text-muted); margin-bottom: 0.25rem;">Operating Cost (₹)</label>
+              <input type="number" id="input-dept-cons-cost" class="form-control-clean" value="61000000" step="1000000">
+            </div>
+          </div>
+
+          <!-- Home Office -->
+          <div style="background: var(--bx-bg-elevated); border: 1px solid var(--bx-border-subtle); padding: 1.25rem; border-radius: 8px;">
+            <div style="font-weight: 700; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.75rem;">🏠 Home Office Division</div>
+            <div style="margin-bottom: 0.75rem;">
+              <label for="input-dept-home-rev" style="display: block; font-size: 0.78rem; color: var(--bx-text-muted); margin-bottom: 0.25rem;">Gross Revenue (₹)</label>
+              <input type="number" id="input-dept-home-rev" class="form-control-clean" value="46000000" step="1000000">
+            </div>
+            <div>
+              <label for="input-dept-home-cost" style="display: block; font-size: 0.78rem; color: var(--bx-text-muted); margin-bottom: 0.25rem;">Operating Cost (₹)</label>
+              <input type="number" id="input-dept-home-cost" class="form-control-clean" value="36000000" step="1000000">
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; border-top: 1px solid var(--bx-border-subtle); padding-top: 1rem;">
+          <button type="button" class="btn btn-outline" id="btn-reset-org">🔄 Reset Defaults</button>
+          <button type="button" class="bx-btn-coral" id="btn-compute-org">⚡ Recalculate Enterprise Visuals</button>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- GENERATED ENTERPRISE VISUALS -->
+      <!-- ===================================================================== -->
+      <div class="visuals-grid" style="margin-bottom: 2.5rem;">
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Cost vs. Revenue by Department</h3>
+              <p>Comparison of operational cost allocations vs generated revenue</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-org-dept-bar"></canvas>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="card-header">
+            <div>
+              <h3>Regional Operational Burn</h3>
+              <p>Expense distribution across geographic operating regions</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-org-region-pie"></canvas>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-header">
+            <div>
+              <h3>Operating Profit Margin by Category</h3>
+              <p>Profit contribution margin (%) per superstore category</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-org-margin-bar"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- ENTERPRISE ORDERS & PROCUREMENT LEDGER -->
+      <!-- ===================================================================== -->
+      <div class="card" style="margin-bottom: 3rem;">
+        <div class="card-header">
+          <div>
+            <h3>Procurement & Cost Ledger</h3>
+            <p>Superstore enterprise transactions synchronized with Power BI Star Schema</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <input type="text" id="order-search-input" placeholder="Search orders..." style="padding: 0.45rem 0.85rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 6px; font-size: 0.84rem; color: #FFFFFF;">
+            <button class="bx-btn-coral" style="padding: 0.45rem 0.85rem; font-size: 0.82rem;" id="btn-open-order-modal">+ Log Order Entry</button>
+          </div>
+        </div>
+
+        <div class="table-responsive" style="max-height: 480px; overflow-y: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Department</th>
+                <th>Region</th>
+                <th>Category</th>
+                <th>Product</th>
+                <th>Sales (₹)</th>
+                <th>Cost (₹)</th>
+                <th>Profit (₹)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="org-table-body">
+              <tr>
+                <td colspan="10" style="text-align: center; color: var(--bx-text-muted); padding: 2rem;">
+                  No orders recorded yet. Add an entry above or use the Department Simulator to project margins.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ADD ORDER MODAL -->
+  <div class="modal-backdrop" id="modal-add-order">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Record Enterprise Procurement Order</h3>
+        <button type="button" class="modal-close" id="btn-close-order-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-add-order">
+          <div class="form-group-clean">
+            <label for="order-date">Order Date</label>
+            <input type="date" id="order-date" class="form-control-clean" required>
+          </div>
+          <div class="form-group-clean">
+            <label for="order-dept">Cost Center / Department</label>
+            <select id="order-dept" class="form-control-clean">
+              <option value="Corporate">Corporate</option>
+              <option value="Consumer">Consumer</option>
+              <option value="Home Office">Home Office</option>
+            </select>
+          </div>
+          <div class="form-group-clean">
+            <label for="order-region">Region</label>
+            <select id="order-region" class="form-control-clean">
+              <option value="South">South</option>
+              <option value="West">West</option>
+              <option value="Central">Central</option>
+              <option value="East">East</option>
+              <option value="North">North</option>
+            </select>
+          </div>
+          <div class="form-group-clean">
+            <label for="order-category">Category</label>
+            <select id="order-category" class="form-control-clean">
+              <option value="Technology">Technology</option>
+              <option value="Office Supplies">Office Supplies</option>
+              <option value="Furniture">Furniture</option>
+            </select>
+          </div>
+          <div class="form-group-clean">
+            <label for="order-product">Product / Service Description</label>
+            <input type="text" id="order-product" class="form-control-clean" required placeholder="e.g. Cisco Server, Ergonomic Chair">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group-clean">
+              <label for="order-sales">Sales Revenue (₹)</label>
+              <input type="number" id="order-sales" class="form-control-clean" min="1" step="0.5" required placeholder="e.g. 50000">
+            </div>
+            <div class="form-group-clean">
+              <label for="order-profit">Profit Margin (₹)</label>
+              <input type="number" id="order-profit" class="form-control-clean" step="0.5" required placeholder="e.g. 12000">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem;">
+            <button type="button" class="btn btn-outline" id="btn-cancel-order-modal">Cancel</button>
+            <button type="submit" class="bx-btn-coral">Save Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sb = document.getElementById("bx-sidebar");
+      if (sb) sb.classList.toggle("collapsed");
+    }
+
+    function switchYear(year, btn) {
+      document.querySelectorAll(".bx-year-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const disp = document.getElementById("current-year-display");
+      if (disp) disp.innerText = year;
+      App.orgState.year = year;
+      App.loadOrganization();
+    }
+
+    function handleOrgCtaClick() {
+      const studioEl = document.getElementById("org-studio-card");
+      if (studioEl) {
+        studioEl.scrollIntoView({ behavior: "smooth" });
+        studioEl.style.boxShadow = "0 0 25px rgba(255, 87, 56, 0.4)";
+        setTimeout(() => { studioEl.style.boxShadow = ""; }, 1800);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      const user = Auth.getUser();
+      const statusDot = document.getElementById("bx-sidebar-dot");
+      const statusText = document.getElementById("bx-sidebar-status");
+      const badgeText = document.getElementById("bx-badge-text");
+
+      if (user) {
+        if (statusDot) statusDot.classList.add("green");
+        if (statusText) statusText.textContent = `${user.role} Active`;
+        if (badgeText) badgeText.textContent = "Custom Enterprise Active";
+      }
+
+      Auth.renderUserBadge();
+      
+      const dateEl = document.getElementById("order-date");
+      if (dateEl) dateEl.value = new Date().toISOString().slice(0, 10);
+
+      App.initOrgStudio();
+      await App.loadOrganization();
+    });
+  </script>
+</body>
+</html>

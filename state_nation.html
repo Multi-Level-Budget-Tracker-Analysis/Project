@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State & Nation Analytics — BUDGETRIX</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="bx-app-container">
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX DARK LEFT SIDEBAR -->
+    <!-- ======================================================================= -->
+    <aside class="bx-sidebar" id="bx-sidebar">
+      <div>
+        <!-- Brand -->
+        <a href="/dashboard" class="bx-brand">
+          <div class="bx-logo-box">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          </div>
+          <span class="bx-brand-title">BUDGETRIX</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="bx-nav-list">
+          <li>
+            <a href="/overview" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </span>
+              <span class="bx-nav-text">Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="/individual" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span class="bx-nav-text">Individual</span>
+            </a>
+          </li>
+          <li>
+            <a href="/organization" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 18h6v3H9z"/></svg>
+              </span>
+              <span class="bx-nav-text">Organization</span>
+            </a>
+          </li>
+          <li>
+            <a href="/state-nation" class="bx-nav-link active">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="bx-nav-text" style="font-weight: 700; letter-spacing: 0.04em;">STATE / NATION</span>
+            </a>
+          </li>
+          <li>
+            <a href="/predictive" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </span>
+              <span class="bx-nav-text">Predictive</span>
+            </a>
+          </li>
+          <li>
+            <a href="/powerbi" class="bx-nav-link">
+              <span class="bx-nav-icon">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </span>
+              <span class="bx-nav-text">Power BI Model</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bottom Status & Collapse -->
+      <div class="bx-sidebar-bottom">
+        <div class="bx-status-box">
+          <div class="bx-status-label">STATUS</div>
+          <div class="bx-status-text">
+            <span class="bx-status-dot green" id="bx-sidebar-dot"></span>
+            <span id="bx-sidebar-status">Macro Feed Online</span>
+          </div>
+        </div>
+        <button type="button" class="bx-collapse-btn" onclick="toggleSidebar()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span class="bx-collapse-label">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ======================================================================= -->
+    <!-- BUDGETRIX MAIN CONTENT -->
+    <!-- ======================================================================= -->
+    <main class="bx-main">
+
+      <!-- Top Row: Breadcrumb & User Pill -->
+      <div class="bx-top-bar">
+        <div class="bx-breadcrumb">
+          MULTI-LEVEL BUDGET TRACKER / <span id="current-year-display">2024</span>
+        </div>
+        <div id="header-user-container">
+          <!-- Rendered by auth.js -->
+        </div>
+      </div>
+
+      <!-- Page Title & Subtitle -->
+      <h1 class="bx-page-title">State & National Fiscal Analytics</h1>
+      <p class="bx-page-subtitle">
+        Sovereign public finance analytics, Indian states fiscal deficit (% of GSDP), FRBM 3.0% compliance, and Union Budget ministry allocations.
+      </p>
+
+      <!-- Action Row: Year Picker, Slicer, Official Status Badge (NO USER INPUT BUTTONS) -->
+      <div class="bx-action-row">
+        <div class="bx-year-selector">
+          <span class="bx-year-label">YEAR</span>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2021', this)">2021</button>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2022', this)">2022</button>
+          <button type="button" class="bx-year-btn" onclick="switchYear('2023', this)">2023</button>
+          <button type="button" class="bx-year-btn active" onclick="switchYear('2024', this)">2024</button>
+          <button type="button" class="bx-year-btn" onclick="switchYear('All', this)">All</button>
+        </div>
+
+        <div class="bx-badge-green" id="bx-data-status-badge">
+          <span>●</span> <span>Official RBI & Union Budget Repository</span>
+        </div>
+      </div>
+
+      <!-- Blue Callout Card (Explaining Sovereign Macro Read-Only Architecture) -->
+      <div class="bx-callout-blue">
+        <div class="bx-callout-title">Authoritative Sovereign Public Finance Repository</div>
+        <div class="bx-callout-text">
+          State and National public finances reflect official figures published by the Reserve Bank of India (RBI State Finances Study) and the Ministry of Finance Union Budget. To safeguard macroeconomic integrity, this tier serves as a verified analytical benchmark without manual user overwrites.
+        </div>
+      </div>
+
+      <!-- 3 Summary Insights Columns -->
+      <div class="bx-insights-grid">
+        <div class="bx-insight-col">
+          <div class="bx-insight-title">Where the money goes</div>
+          <div class="bx-insight-desc" id="state-insight-spend">
+            National Union Budget allocates highest capital outlays to Defence (₹6.21L Cr) and Road Transport & Highways (₹2.78L Cr).
+          </div>
+        </div>
+
+        <div class="bx-insight-col">
+          <div class="bx-insight-title">Plan vs reality</div>
+          <div class="bx-insight-desc" id="state-insight-deficit">
+            Average Indian state fiscal deficit sits at 3.28% of GSDP — closely tracking the statutory 3.0% FRBM Act benchmark.
+          </div>
+        </div>
+
+        <div class="bx-insight-col">
+          <div class="bx-insight-title">What you kept</div>
+          <div class="bx-insight-desc" id="state-insight-receipts">
+            Aggregate State Own Tax Revenue (SOTR) covers 74.2% of total state revenue expenditure requirements.
+          </div>
+        </div>
+      </div>
+
+      <!-- Top KPI Cards Row -->
+      <div class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="kpi-card border-navy">
+          <div class="kpi-label">Aggregated State Revenue Receipts</div>
+          <div class="kpi-value" id="state-kpi-total-rev">₹0 Cr</div>
+          <div class="kpi-subtext">Tax & Non-Tax State Revenue</div>
+        </div>
+        <div class="kpi-card border-amber">
+          <div class="kpi-label">Total State Expenditures</div>
+          <div class="kpi-value" id="state-kpi-total-exp">₹0 Cr</div>
+          <div class="kpi-subtext">Revenue & Capital Outlay</div>
+        </div>
+        <div class="kpi-card border-teal">
+          <div class="kpi-label">Average State Fiscal Deficit</div>
+          <div class="kpi-value" id="state-kpi-avg-deficit">0.00%</div>
+          <div class="kpi-subtext">FRBM 3.0% Benchmark Target</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">National Union Budget Allocation</div>
+          <div class="kpi-value" id="state-kpi-union-total">₹0 Cr</div>
+          <div class="kpi-subtext">Central Ministries & Capital Works</div>
+        </div>
+      </div>
+
+      <!-- Macro Visuals Grid -->
+      <div class="visuals-grid" style="margin-bottom: 2.5rem;">
+        <div class="card col-7">
+          <div class="card-header">
+            <div>
+              <h3>Indian States Fiscal Deficit as % of GSDP</h3>
+              <p>Fiscal prudence benchmark (FRBM Act 3.0% statutory threshold line highlighted)</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-lg">
+            <canvas id="chart-state-deficit-bar"></canvas>
+          </div>
+        </div>
+
+        <div class="card col-5">
+          <div class="card-header">
+            <div>
+              <h3>National Union Budget Allocation</h3>
+              <p>Proportional breakdown by major Central Ministries</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-lg">
+            <canvas id="chart-union-budget-donut"></canvas>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-header">
+            <div>
+              <h3>State Revenue Receipts vs. Expenditures</h3>
+              <p>Comparative fiscal capacity across major Indian states (₹ Crores)</p>
+            </div>
+          </div>
+          <div class="chart-container chart-container-md">
+            <canvas id="chart-state-rev-exp-bar"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- State Scorecard Table -->
+      <div class="card" style="margin-bottom: 3rem;">
+        <div class="card-header">
+          <div>
+            <h3>Indian States Public Finance Scorecard</h3>
+            <p>State-by-state GSDP, revenue receipts, expenditures, and FRBM deficit compliance</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <input type="text" id="state-search-input" placeholder="Search state name..." style="padding: 0.45rem 0.85rem; background: var(--bx-bg-card); border: 1px solid var(--bx-border-subtle); border-radius: 6px; font-size: 0.84rem; color: #FFFFFF;">
+          </div>
+        </div>
+
+        <div class="table-responsive" style="max-height: 480px; overflow-y: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Year</th>
+                <th>GSDP (₹ Cr)</th>
+                <th>Revenue Receipts (₹ Cr)</th>
+                <th>Total Expenditure (₹ Cr)</th>
+                <th>Fiscal Deficit (₹ Cr)</th>
+                <th>Deficit % of GSDP</th>
+                <th>FRBM Compliance</th>
+              </tr>
+            </thead>
+            <tbody id="state-table-body">
+              <tr>
+                <td colspan="8" style="text-align: center; color: var(--bx-text-muted); padding: 2rem;">
+                  Loading state finances...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sb = document.getElementById("bx-sidebar");
+      if (sb) sb.classList.toggle("collapsed");
+    }
+
+    function switchYear(year, btn) {
+      document.querySelectorAll(".bx-year-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const disp = document.getElementById("current-year-display");
+      if (disp) disp.innerText = year;
+      App.stateNationState.year = year;
+      App.loadStateNation();
+    }
+
+    // Filter search
+    document.getElementById("state-search-input")?.addEventListener("input", (e) => {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll("#state-table-body tr").forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(q) ? "" : "none";
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      Auth.renderUserBadge();
+      await App.loadStateNation();
+    });
+  </script>
+</body>
+</html>

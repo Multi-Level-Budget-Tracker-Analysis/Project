@@ -1,0 +1,144 @@
+// ==============================================================================
+// MULTI-LEVEL BUDGET TRACKER ANALYTICS — COMPLETE DAX MEASURES LIBRARY
+// Data Visualization Lab Project — NIE Mysuru
+// ==============================================================================
+// INSTRUCTIONS:
+// 1. In Power BI Desktop: Modeling -> New Table
+// 2. Type: _Measures = ROW("x", 1)
+// 3. Right-click the column 'x' and select 'Hide'
+// 4. Add each of the following measures into the _Measures table.
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// SECTION 1: INDIVIDUAL LEVEL MEASURES
+// ------------------------------------------------------------------------------
+
+Total Income = 
+CALCULATE(
+    SUM('Individual'[Amount]), 
+    'Individual'[Income/Expense] = "Income"
+)
+
+Total Expense = 
+CALCULATE(
+    SUM('Individual'[Amount]), 
+    'Individual'[Income/Expense] = "Expense"
+)
+
+Net Savings = 
+[Total Income] - [Total Expense]
+
+Savings Rate % = 
+DIVIDE([Net Savings], [Total Income], 0)
+
+Total Planned Budget = 
+SUM('Individual'[MonthlyBudget])
+
+Budget Variance (Ind) = 
+[Total Planned Budget] - [Total Expense]
+
+Budget Utilization % (Ind) = 
+DIVIDE([Total Expense], [Total Planned Budget], 0)
+
+Overspend Flag = 
+IF(
+    [Total Expense] > [Total Planned Budget], 
+    "Over Budget", 
+    "Within Budget"
+)
+
+
+// ------------------------------------------------------------------------------
+// SECTION 2: ORGANIZATION LEVEL MEASURES
+// ------------------------------------------------------------------------------
+
+Total Revenue (Org) = 
+SUM('Organization'[Sales])
+
+Total Cost (Org) = 
+SUM('Organization'[Cost])
+
+Total Profit (Org) = 
+SUM('Organization'[Profit])
+
+Budget Variance (Org) = 
+[Total Revenue (Org)] - [Total Cost (Org)]
+
+Budget Utilization % (Org) = 
+DIVIDE([Total Cost (Org)], [Total Revenue (Org)], 0)
+
+Revenue Growth % = 
+VAR PreviousYearRevenue = 
+    CALCULATE(
+        [Total Revenue (Org)], 
+        DATEADD('DateTable'[Date], -1, YEAR)
+    )
+RETURN
+    DIVIDE([Total Revenue (Org)] - PreviousYearRevenue, PreviousYearRevenue, 0)
+
+Top Department by Cost = 
+CALCULATE(
+    VALUES('Organization'[Department]), 
+    TOPN(1, VALUES('Organization'[Department]), CALCULATE([Total Cost (Org)]))
+)
+
+
+// ------------------------------------------------------------------------------
+// SECTION 3: STATE / NATION LEVEL MEASURES
+// ------------------------------------------------------------------------------
+
+Total State Revenue = 
+CALCULATE(
+    SUM('State'[Value]), 
+    'State'[Indicator] = "Revenue"
+)
+
+Total State Expenditure = 
+CALCULATE(
+    SUM('State'[Value]), 
+    'State'[Indicator] = "Expenditure"
+)
+
+Fiscal Deficit = 
+[Total State Revenue] - [Total State Expenditure]
+
+Debt to Revenue % = 
+VAR StateDebt = 
+    CALCULATE(
+        SUM('State'[Value]), 
+        'State'[Indicator] = "Debt"
+    )
+RETURN
+    DIVIDE(StateDebt, [Total State Revenue], 0)
+
+National Sector Allocation = 
+SUM('National'[Allocation])
+
+Sector Share % = 
+DIVIDE(
+    [National Sector Allocation], 
+    CALCULATE([National Sector Allocation], ALL('National'[Sector])),
+    0
+)
+
+
+// ------------------------------------------------------------------------------
+// SECTION 4: CROSS-LEVEL COMPARATIVE MEASURES
+// (Used with disconnected LevelTable: 'Individual', 'Organization', 'State')
+// ------------------------------------------------------------------------------
+
+Selected Utilization % = 
+SWITCH(
+    SELECTEDVALUE('LevelTable'[Level]),
+    "Individual", [Budget Utilization % (Ind)],
+    "Organization", [Budget Utilization % (Org)],
+    "State", [Debt to Revenue %],
+    BLANK()
+)
+
+KPI Color Coding = 
+SWITCH(
+    TRUE(),
+    [Net Savings] >= 0, "#2E7D74", // Teal for positive
+    "#D9381E"                     // Crimson red for negative/deficit
+)

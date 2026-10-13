@@ -1,0 +1,661 @@
+id,state,year,indicator,value
+1,Maharashtra,2014,Revenue,177871.39
+2,Maharashtra,2014,Expenditure,190720.65
+3,Maharashtra,2014,Fiscal Deficit,-12849.26
+4,Maharashtra,2014,Debt,453639.98
+5,Maharashtra,2015,Revenue,187798.93
+6,Maharashtra,2015,Expenditure,201665.07
+7,Maharashtra,2015,Fiscal Deficit,-13866.14
+8,Maharashtra,2015,Debt,594611.67
+9,Maharashtra,2016,Revenue,204708.83
+10,Maharashtra,2016,Expenditure,221606.26
+11,Maharashtra,2016,Fiscal Deficit,-16897.43
+12,Maharashtra,2016,Debt,438012.64
+13,Maharashtra,2017,Revenue,221972.79
+14,Maharashtra,2017,Expenditure,233088.66
+15,Maharashtra,2017,Fiscal Deficit,-11115.88
+16,Maharashtra,2017,Debt,586827.82
+17,Maharashtra,2018,Revenue,240530.1
+18,Maharashtra,2018,Expenditure,260444.89
+19,Maharashtra,2018,Fiscal Deficit,-19914.79
+20,Maharashtra,2018,Debt,643481.14
+21,Maharashtra,2019,Revenue,262437.2
+22,Maharashtra,2019,Expenditure,277222.64
+23,Maharashtra,2019,Fiscal Deficit,-14785.44
+24,Maharashtra,2019,Debt,588187.62
+25,Maharashtra,2020,Revenue,278919.72
+26,Maharashtra,2020,Expenditure,300051.33
+27,Maharashtra,2020,Fiscal Deficit,-21131.61
+28,Maharashtra,2020,Debt,802937.02
+29,Maharashtra,2021,Revenue,296066.5
+30,Maharashtra,2021,Expenditure,311588.85
+31,Maharashtra,2021,Fiscal Deficit,-15522.34
+32,Maharashtra,2021,Debt,704572.91
+33,Maharashtra,2022,Revenue,325418.39
+34,Maharashtra,2022,Expenditure,352455.81
+35,Maharashtra,2022,Fiscal Deficit,-27037.42
+36,Maharashtra,2022,Debt,780353.37
+37,Maharashtra,2023,Revenue,345460.61
+38,Maharashtra,2023,Expenditure,374790.97
+39,Maharashtra,2023,Fiscal Deficit,-29330.37
+40,Maharashtra,2023,Debt,1055769.1
+41,Maharashtra,2024,Revenue,384114.63
+42,Maharashtra,2024,Expenditure,400222.25
+43,Maharashtra,2024,Fiscal Deficit,-16107.61
+44,Maharashtra,2024,Debt,916797.84
+45,Tamil Nadu,2014,Revenue,135479.85
+46,Tamil Nadu,2014,Expenditure,147097.15
+47,Tamil Nadu,2014,Fiscal Deficit,-11617.29
+48,Tamil Nadu,2014,Debt,303102.83
+49,Tamil Nadu,2015,Revenue,144673.84
+50,Tamil Nadu,2015,Expenditure,152056.87
+51,Tamil Nadu,2015,Fiscal Deficit,-7383.03
+52,Tamil Nadu,2015,Debt,429694.02
+53,Tamil Nadu,2016,Revenue,155244.32
+54,Tamil Nadu,2016,Expenditure,169087.27
+55,Tamil Nadu,2016,Fiscal Deficit,-13842.95
+56,Tamil Nadu,2016,Debt,378636.32
+57,Tamil Nadu,2017,Revenue,169151.83
+58,Tamil Nadu,2017,Expenditure,177540.72
+59,Tamil Nadu,2017,Fiscal Deficit,-8388.89
+60,Tamil Nadu,2017,Debt,409560.78
+61,Tamil Nadu,2018,Revenue,182542.05
+62,Tamil Nadu,2018,Expenditure,198948.56
+63,Tamil Nadu,2018,Fiscal Deficit,-16406.52
+64,Tamil Nadu,2018,Debt,432001.09
+65,Tamil Nadu,2019,Revenue,191347.35
+66,Tamil Nadu,2019,Expenditure,199550.26
+67,Tamil Nadu,2019,Fiscal Deficit,-8202.91
+68,Tamil Nadu,2019,Debt,442788.37
+69,Tamil Nadu,2020,Revenue,205025.63
+70,Tamil Nadu,2020,Expenditure,218568.91
+71,Tamil Nadu,2020,Fiscal Deficit,-13543.27
+72,Tamil Nadu,2020,Debt,559742.39
+73,Tamil Nadu,2021,Revenue,219073.18
+74,Tamil Nadu,2021,Expenditure,229567.31
+75,Tamil Nadu,2021,Fiscal Deficit,-10494.13
+76,Tamil Nadu,2021,Debt,593967.3
+77,Tamil Nadu,2022,Revenue,234403.27
+78,Tamil Nadu,2022,Expenditure,247824.25
+79,Tamil Nadu,2022,Fiscal Deficit,-13420.99
+80,Tamil Nadu,2022,Debt,743182.5
+81,Tamil Nadu,2023,Revenue,253217.2
+82,Tamil Nadu,2023,Expenditure,263537.46
+83,Tamil Nadu,2023,Fiscal Deficit,-10320.27
+84,Tamil Nadu,2023,Debt,798340.42
+85,Tamil Nadu,2024,Revenue,275072.77
+86,Tamil Nadu,2024,Expenditure,291438.47
+87,Tamil Nadu,2024,Fiscal Deficit,-16365.7
+88,Tamil Nadu,2024,Debt,874071.72
+89,Karnataka,2014,Revenue,109410.17
+90,Karnataka,2014,Expenditure,118812.14
+91,Karnataka,2014,Fiscal Deficit,-9401.97
+92,Karnataka,2014,Debt,250084.84
+93,Karnataka,2015,Revenue,121807.97
+94,Karnataka,2015,Expenditure,130805.88
+95,Karnataka,2015,Fiscal Deficit,-8997.91
+96,Karnataka,2015,Debt,384203.09
+97,Karnataka,2016,Revenue,128639.05
+98,Karnataka,2016,Expenditure,137990.64
+99,Karnataka,2016,Fiscal Deficit,-9351.6
+100,Karnataka,2016,Debt,403235.71
+101,Karnataka,2017,Revenue,137958.69
+102,Karnataka,2017,Expenditure,144753.87
+103,Karnataka,2017,Fiscal Deficit,-6795.18
+104,Karnataka,2017,Debt,374249.63
+105,Karnataka,2018,Revenue,149024.7
+106,Karnataka,2018,Expenditure,155392.07
+107,Karnataka,2018,Fiscal Deficit,-6367.37
+108,Karnataka,2018,Debt,315496.53
+109,Karnataka,2019,Revenue,162340.07
+110,Karnataka,2019,Expenditure,174109.4
+111,Karnataka,2019,Fiscal Deficit,-11769.33
+112,Karnataka,2019,Debt,424104.28
+113,Karnataka,2020,Revenue,177141.96
+114,Karnataka,2020,Expenditure,184461.19
+115,Karnataka,2020,Fiscal Deficit,-7319.23
+116,Karnataka,2020,Debt,391726.84
+117,Karnataka,2021,Revenue,191018.34
+118,Karnataka,2021,Expenditure,200156.69
+119,Karnataka,2021,Fiscal Deficit,-9138.36
+120,Karnataka,2021,Debt,403833.29
+121,Karnataka,2022,Revenue,202153.24
+122,Karnataka,2022,Expenditure,216828.38
+123,Karnataka,2022,Fiscal Deficit,-14675.14
+124,Karnataka,2022,Debt,637980.07
+125,Karnataka,2023,Revenue,222189.37
+126,Karnataka,2023,Expenditure,231146.82
+127,Karnataka,2023,Fiscal Deficit,-8957.45
+128,Karnataka,2023,Debt,514203.4
+129,Karnataka,2024,Revenue,241740.41
+130,Karnataka,2024,Expenditure,260990.82
+131,Karnataka,2024,Fiscal Deficit,-19250.42
+132,Karnataka,2024,Debt,562444.35
+133,Gujarat,2014,Revenue,97028.14
+134,Gujarat,2014,Expenditure,101085.41
+135,Gujarat,2014,Fiscal Deficit,-4057.27
+136,Gujarat,2014,Debt,261419.96
+137,Gujarat,2015,Revenue,106983.12
+138,Gujarat,2015,Expenditure,113934.85
+139,Gujarat,2015,Fiscal Deficit,-6951.73
+140,Gujarat,2015,Debt,317077.1
+141,Gujarat,2016,Revenue,114202.23
+142,Gujarat,2016,Expenditure,122573.43
+143,Gujarat,2016,Fiscal Deficit,-8371.21
+144,Gujarat,2016,Debt,298957.22
+145,Gujarat,2017,Revenue,126339.22
+146,Gujarat,2017,Expenditure,131852.78
+147,Gujarat,2017,Fiscal Deficit,-5513.55
+148,Gujarat,2017,Debt,328391.41
+149,Gujarat,2018,Revenue,137799.87
+150,Gujarat,2018,Expenditure,144925.31
+151,Gujarat,2018,Fiscal Deficit,-7125.44
+152,Gujarat,2018,Debt,373345.21
+153,Gujarat,2019,Revenue,146612.15
+154,Gujarat,2019,Expenditure,155540.54
+155,Gujarat,2019,Fiscal Deficit,-8928.39
+156,Gujarat,2019,Debt,459676.45
+157,Gujarat,2020,Revenue,163896.2
+158,Gujarat,2020,Expenditure,174599.82
+159,Gujarat,2020,Fiscal Deficit,-10703.62
+160,Gujarat,2020,Debt,501225.53
+161,Gujarat,2021,Revenue,178977.48
+162,Gujarat,2021,Expenditure,190690.68
+163,Gujarat,2021,Fiscal Deficit,-11713.2
+164,Gujarat,2021,Debt,449718.5
+165,Gujarat,2022,Revenue,196480.54
+166,Gujarat,2022,Expenditure,209883.74
+167,Gujarat,2022,Fiscal Deficit,-13403.2
+168,Gujarat,2022,Debt,517984.01
+169,Gujarat,2023,Revenue,209923.78
+170,Gujarat,2023,Expenditure,219924.26
+171,Gujarat,2023,Fiscal Deficit,-10000.47
+172,Gujarat,2023,Debt,484823.4
+173,Gujarat,2024,Revenue,230943.29
+174,Gujarat,2024,Expenditure,246385.46
+175,Gujarat,2024,Fiscal Deficit,-15442.17
+176,Gujarat,2024,Debt,681750.68
+177,Uttar Pradesh,2014,Revenue,134896.31
+178,Uttar Pradesh,2014,Expenditure,142885.59
+179,Uttar Pradesh,2014,Fiscal Deficit,-7989.29
+180,Uttar Pradesh,2014,Debt,365683.08
+181,Uttar Pradesh,2015,Revenue,145871.11
+182,Uttar Pradesh,2015,Expenditure,158719.25
+183,Uttar Pradesh,2015,Fiscal Deficit,-12848.14
+184,Uttar Pradesh,2015,Debt,408263.75
+185,Uttar Pradesh,2016,Revenue,159317.18
+186,Uttar Pradesh,2016,Expenditure,169606.25
+187,Uttar Pradesh,2016,Fiscal Deficit,-10289.08
+188,Uttar Pradesh,2016,Debt,481910.47
+189,Uttar Pradesh,2017,Revenue,178208.14
+190,Uttar Pradesh,2017,Expenditure,191572.71
+191,Uttar Pradesh,2017,Fiscal Deficit,-13364.57
+192,Uttar Pradesh,2017,Debt,546232.39
+193,Uttar Pradesh,2018,Revenue,193145.98
+194,Uttar Pradesh,2018,Expenditure,204419.32
+195,Uttar Pradesh,2018,Fiscal Deficit,-11273.34
+196,Uttar Pradesh,2018,Debt,494377.05
+197,Uttar Pradesh,2019,Revenue,207687.67
+198,Uttar Pradesh,2019,Expenditure,216535.83
+199,Uttar Pradesh,2019,Fiscal Deficit,-8848.15
+200,Uttar Pradesh,2019,Debt,571269.61
+201,Uttar Pradesh,2020,Revenue,227170.08
+202,Uttar Pradesh,2020,Expenditure,245197.03
+203,Uttar Pradesh,2020,Fiscal Deficit,-18026.95
+204,Uttar Pradesh,2020,Debt,561991.38
+205,Uttar Pradesh,2021,Revenue,251815.47
+206,Uttar Pradesh,2021,Expenditure,271189.37
+207,Uttar Pradesh,2021,Fiscal Deficit,-19373.9
+208,Uttar Pradesh,2021,Debt,689154.74
+209,Uttar Pradesh,2022,Revenue,266402.99
+210,Uttar Pradesh,2022,Expenditure,289499.78
+211,Uttar Pradesh,2022,Fiscal Deficit,-23096.78
+212,Uttar Pradesh,2022,Debt,759729.9
+213,Uttar Pradesh,2023,Revenue,295150.92
+214,Uttar Pradesh,2023,Expenditure,309816.24
+215,Uttar Pradesh,2023,Fiscal Deficit,-14665.33
+216,Uttar Pradesh,2023,Debt,684159.56
+217,Uttar Pradesh,2024,Revenue,316112.39
+218,Uttar Pradesh,2024,Expenditure,343269.96
+219,Uttar Pradesh,2024,Fiscal Deficit,-27157.57
+220,Uttar Pradesh,2024,Debt,817850.58
+221,West Bengal,2014,Revenue,109763.28
+222,West Bengal,2014,Expenditure,117950.21
+223,West Bengal,2014,Fiscal Deficit,-8186.92
+224,West Bengal,2014,Debt,328572.25
+225,West Bengal,2015,Revenue,114445.42
+226,West Bengal,2015,Expenditure,120178.42
+227,West Bengal,2015,Fiscal Deficit,-5733.01
+228,West Bengal,2015,Debt,361566.44
+229,West Bengal,2016,Revenue,120587.23
+230,West Bengal,2016,Expenditure,131438.95
+231,West Bengal,2016,Fiscal Deficit,-10851.72
+232,West Bengal,2016,Debt,305776.16
+233,West Bengal,2017,Revenue,127203.63
+234,West Bengal,2017,Expenditure,134205.96
+235,West Bengal,2017,Fiscal Deficit,-7002.33
+236,West Bengal,2017,Debt,374365.76
+237,West Bengal,2018,Revenue,136946.83
+238,West Bengal,2018,Expenditure,143379.73
+239,West Bengal,2018,Fiscal Deficit,-6432.9
+240,West Bengal,2018,Debt,299280.81
+241,West Bengal,2019,Revenue,143088.92
+242,West Bengal,2019,Expenditure,152903.82
+243,West Bengal,2019,Fiscal Deficit,-9814.9
+244,West Bengal,2019,Debt,358203.3
+245,West Bengal,2020,Revenue,155557.28
+246,West Bengal,2020,Expenditure,162758.14
+247,West Bengal,2020,Fiscal Deficit,-7200.86
+248,West Bengal,2020,Debt,375289.54
+249,West Bengal,2021,Revenue,164076.01
+250,West Bengal,2021,Expenditure,173309.68
+251,West Bengal,2021,Fiscal Deficit,-9233.67
+252,West Bengal,2021,Debt,469842.55
+253,West Bengal,2022,Revenue,171888.1
+254,West Bengal,2022,Expenditure,185215.71
+255,West Bengal,2022,Fiscal Deficit,-13327.61
+256,West Bengal,2022,Debt,486457.56
+257,West Bengal,2023,Revenue,183318.47
+258,West Bengal,2023,Expenditure,197107.31
+259,West Bengal,2023,Fiscal Deficit,-13788.84
+260,West Bengal,2023,Debt,454862.06
+261,West Bengal,2024,Revenue,198279.64
+262,West Bengal,2024,Expenditure,213561.07
+263,West Bengal,2024,Fiscal Deficit,-15281.44
+264,West Bengal,2024,Debt,478681.0
+265,Rajasthan,2014,Revenue,95362.63
+266,Rajasthan,2014,Expenditure,102169.27
+267,Rajasthan,2014,Fiscal Deficit,-6806.64
+268,Rajasthan,2014,Debt,290901.48
+269,Rajasthan,2015,Revenue,101473.23
+270,Rajasthan,2015,Expenditure,110169.64
+271,Rajasthan,2015,Fiscal Deficit,-8696.41
+272,Rajasthan,2015,Debt,273771.75
+273,Rajasthan,2016,Revenue,107001.99
+274,Rajasthan,2016,Expenditure,115215.73
+275,Rajasthan,2016,Fiscal Deficit,-8213.74
+276,Rajasthan,2016,Debt,333740.87
+277,Rajasthan,2017,Revenue,115323.85
+278,Rajasthan,2017,Expenditure,124066.11
+279,Rajasthan,2017,Fiscal Deficit,-8742.25
+280,Rajasthan,2017,Debt,318915.47
+281,Rajasthan,2018,Revenue,122447.6
+282,Rajasthan,2018,Expenditure,128572.55
+283,Rajasthan,2018,Fiscal Deficit,-6124.95
+284,Rajasthan,2018,Debt,341048.77
+285,Rajasthan,2019,Revenue,130145.4
+286,Rajasthan,2019,Expenditure,138260.95
+287,Rajasthan,2019,Fiscal Deficit,-8115.55
+288,Rajasthan,2019,Debt,384288.3
+289,Rajasthan,2020,Revenue,140463.43
+290,Rajasthan,2020,Expenditure,149122.47
+291,Rajasthan,2020,Fiscal Deficit,-8659.05
+292,Rajasthan,2020,Debt,444157.93
+293,Rajasthan,2021,Revenue,151561.48
+294,Rajasthan,2021,Expenditure,161720.89
+295,Rajasthan,2021,Fiscal Deficit,-10159.41
+296,Rajasthan,2021,Debt,350518.86
+297,Rajasthan,2022,Revenue,163194.08
+298,Rajasthan,2022,Expenditure,172727.55
+299,Rajasthan,2022,Fiscal Deficit,-9533.48
+300,Rajasthan,2022,Debt,471290.34
+301,Rajasthan,2023,Revenue,176034.52
+302,Rajasthan,2023,Expenditure,190395.31
+303,Rajasthan,2023,Fiscal Deficit,-14360.79
+304,Rajasthan,2023,Debt,412436.56
+305,Rajasthan,2024,Revenue,188171.54
+306,Rajasthan,2024,Expenditure,201959.61
+307,Rajasthan,2024,Fiscal Deficit,-13788.07
+308,Rajasthan,2024,Debt,431438.64
+309,Telangana,2014,Revenue,79579.05
+310,Telangana,2014,Expenditure,83748.22
+311,Telangana,2014,Fiscal Deficit,-4169.17
+312,Telangana,2014,Debt,218280.96
+313,Telangana,2015,Revenue,87490.91
+314,Telangana,2015,Expenditure,91010.18
+315,Telangana,2015,Fiscal Deficit,-3519.27
+316,Telangana,2015,Debt,275039.09
+317,Telangana,2016,Revenue,92907.35
+318,Telangana,2016,Expenditure,100519.13
+319,Telangana,2016,Fiscal Deficit,-7611.78
+320,Telangana,2016,Debt,245852.74
+321,Telangana,2017,Revenue,103332.39
+322,Telangana,2017,Expenditure,111649.87
+323,Telangana,2017,Fiscal Deficit,-8317.48
+324,Telangana,2017,Debt,296107.09
+325,Telangana,2018,Revenue,109740.04
+326,Telangana,2018,Expenditure,116975.06
+327,Telangana,2018,Fiscal Deficit,-7235.02
+328,Telangana,2018,Debt,255060.55
+329,Telangana,2019,Revenue,117971.45
+330,Telangana,2019,Expenditure,122822.41
+331,Telangana,2019,Fiscal Deficit,-4850.96
+332,Telangana,2019,Debt,295116.13
+333,Telangana,2020,Revenue,130696.62
+334,Telangana,2020,Expenditure,140627.06
+335,Telangana,2020,Fiscal Deficit,-9930.44
+336,Telangana,2020,Debt,283423.92
+337,Telangana,2021,Revenue,138045.06
+338,Telangana,2021,Expenditure,146580.67
+339,Telangana,2021,Fiscal Deficit,-8535.61
+340,Telangana,2021,Debt,369277.44
+341,Telangana,2022,Revenue,150095.27
+342,Telangana,2022,Expenditure,162384.28
+343,Telangana,2022,Fiscal Deficit,-12289.01
+344,Telangana,2022,Debt,347582.23
+345,Telangana,2023,Revenue,162947.42
+346,Telangana,2023,Expenditure,174742.65
+347,Telangana,2023,Fiscal Deficit,-11795.24
+348,Telangana,2023,Debt,345162.24
+349,Telangana,2024,Revenue,172561.62
+350,Telangana,2024,Expenditure,180483.99
+351,Telangana,2024,Fiscal Deficit,-7922.37
+352,Telangana,2024,Debt,479411.98
+353,Kerala,2014,Revenue,82128.46
+354,Kerala,2014,Expenditure,89034.71
+355,Kerala,2014,Fiscal Deficit,-6906.25
+356,Kerala,2014,Debt,248203.87
+357,Kerala,2015,Revenue,85990.58
+358,Kerala,2015,Expenditure,92092.82
+359,Kerala,2015,Fiscal Deficit,-6102.24
+360,Kerala,2015,Debt,243327.62
+361,Kerala,2016,Revenue,90241.77
+362,Kerala,2016,Expenditure,96037.48
+363,Kerala,2016,Fiscal Deficit,-5795.71
+364,Kerala,2016,Debt,202897.19
+365,Kerala,2017,Revenue,95784.37
+366,Kerala,2017,Expenditure,101367.56
+367,Kerala,2017,Fiscal Deficit,-5583.19
+368,Kerala,2017,Debt,301968.54
+369,Kerala,2018,Revenue,101031.31
+370,Kerala,2018,Expenditure,107540.27
+371,Kerala,2018,Fiscal Deficit,-6508.96
+372,Kerala,2018,Debt,218794.52
+373,Kerala,2019,Revenue,106450.14
+374,Kerala,2019,Expenditure,113456.51
+375,Kerala,2019,Fiscal Deficit,-7006.37
+376,Kerala,2019,Debt,292717.76
+377,Kerala,2020,Revenue,114965.16
+378,Kerala,2020,Expenditure,125244.56
+379,Kerala,2020,Fiscal Deficit,-10279.4
+380,Kerala,2020,Debt,301605.74
+381,Kerala,2021,Revenue,122358.01
+382,Kerala,2021,Expenditure,132612.19
+383,Kerala,2021,Fiscal Deficit,-10254.18
+384,Kerala,2021,Debt,274226.72
+385,Kerala,2022,Revenue,130441.33
+386,Kerala,2022,Expenditure,136522.81
+387,Kerala,2022,Fiscal Deficit,-6081.48
+388,Kerala,2022,Debt,400326.19
+389,Kerala,2023,Revenue,138214.18
+390,Kerala,2023,Expenditure,149140.21
+391,Kerala,2023,Fiscal Deficit,-10926.03
+392,Kerala,2023,Debt,420839.99
+393,Kerala,2024,Revenue,142357.91
+394,Kerala,2024,Expenditure,148650.2
+395,Kerala,2024,Fiscal Deficit,-6292.3
+396,Kerala,2024,Debt,364407.22
+397,Madhya Pradesh,2014,Revenue,89912.03
+398,Madhya Pradesh,2014,Expenditure,97604.51
+399,Madhya Pradesh,2014,Fiscal Deficit,-7692.47
+400,Madhya Pradesh,2014,Debt,206275.59
+401,Madhya Pradesh,2015,Revenue,96859.24
+402,Madhya Pradesh,2015,Expenditure,104245.49
+403,Madhya Pradesh,2015,Fiscal Deficit,-7386.25
+404,Madhya Pradesh,2015,Debt,214942.22
+405,Madhya Pradesh,2016,Revenue,106273.41
+406,Madhya Pradesh,2016,Expenditure,112393.67
+407,Madhya Pradesh,2016,Fiscal Deficit,-6120.27
+408,Madhya Pradesh,2016,Debt,285791.77
+409,Madhya Pradesh,2017,Revenue,113603.82
+410,Madhya Pradesh,2017,Expenditure,118561.16
+411,Madhya Pradesh,2017,Fiscal Deficit,-4957.34
+412,Madhya Pradesh,2017,Debt,270405.89
+413,Madhya Pradesh,2018,Revenue,119370.14
+414,Madhya Pradesh,2018,Expenditure,128369.15
+415,Madhya Pradesh,2018,Fiscal Deficit,-8999.01
+416,Madhya Pradesh,2018,Debt,289026.39
+417,Madhya Pradesh,2019,Revenue,127935.22
+418,Madhya Pradesh,2019,Expenditure,134380.22
+419,Madhya Pradesh,2019,Fiscal Deficit,-6444.99
+420,Madhya Pradesh,2019,Debt,351564.68
+421,Madhya Pradesh,2020,Revenue,136875.08
+422,Madhya Pradesh,2020,Expenditure,146787.77
+423,Madhya Pradesh,2020,Fiscal Deficit,-9912.69
+424,Madhya Pradesh,2020,Debt,288346.24
+425,Madhya Pradesh,2021,Revenue,147276.39
+426,Madhya Pradesh,2021,Expenditure,160120.48
+427,Madhya Pradesh,2021,Fiscal Deficit,-12844.09
+428,Madhya Pradesh,2021,Debt,348144.76
+429,Madhya Pradesh,2022,Revenue,155563.23
+430,Madhya Pradesh,2022,Expenditure,167792.77
+431,Madhya Pradesh,2022,Fiscal Deficit,-12229.54
+432,Madhya Pradesh,2022,Debt,351788.47
+433,Madhya Pradesh,2023,Revenue,168292.89
+434,Madhya Pradesh,2023,Expenditure,178473.05
+435,Madhya Pradesh,2023,Fiscal Deficit,-10180.16
+436,Madhya Pradesh,2023,Debt,384655.88
+437,Madhya Pradesh,2024,Revenue,178775.86
+438,Madhya Pradesh,2024,Expenditure,193063.36
+439,Madhya Pradesh,2024,Fiscal Deficit,-14287.5
+440,Madhya Pradesh,2024,Debt,499759.85
+441,Andhra Pradesh,2014,Revenue,85553.08
+442,Andhra Pradesh,2014,Expenditure,91503.25
+443,Andhra Pradesh,2014,Fiscal Deficit,-5950.17
+444,Andhra Pradesh,2014,Debt,273311.34
+445,Andhra Pradesh,2015,Revenue,91201.57
+446,Andhra Pradesh,2015,Expenditure,98174.21
+447,Andhra Pradesh,2015,Fiscal Deficit,-6972.64
+448,Andhra Pradesh,2015,Debt,204980.15
+449,Andhra Pradesh,2016,Revenue,97987.38
+450,Andhra Pradesh,2016,Expenditure,102501.57
+451,Andhra Pradesh,2016,Fiscal Deficit,-4514.2
+452,Andhra Pradesh,2016,Debt,268297.27
+453,Andhra Pradesh,2017,Revenue,106526.05
+454,Andhra Pradesh,2017,Expenditure,114579.54
+455,Andhra Pradesh,2017,Fiscal Deficit,-8053.49
+456,Andhra Pradesh,2017,Debt,293104.36
+457,Andhra Pradesh,2018,Revenue,113737.18
+458,Andhra Pradesh,2018,Expenditure,119367.91
+459,Andhra Pradesh,2018,Fiscal Deficit,-5630.73
+460,Andhra Pradesh,2018,Debt,271979.16
+461,Andhra Pradesh,2019,Revenue,119432.97
+462,Andhra Pradesh,2019,Expenditure,130077.21
+463,Andhra Pradesh,2019,Fiscal Deficit,-10644.24
+464,Andhra Pradesh,2019,Debt,262979.27
+465,Andhra Pradesh,2020,Revenue,131501.01
+466,Andhra Pradesh,2020,Expenditure,139284.2
+467,Andhra Pradesh,2020,Fiscal Deficit,-7783.19
+468,Andhra Pradesh,2020,Debt,400135.42
+469,Andhra Pradesh,2021,Revenue,138427.73
+470,Andhra Pradesh,2021,Expenditure,150486.51
+471,Andhra Pradesh,2021,Fiscal Deficit,-12058.78
+472,Andhra Pradesh,2021,Debt,403105.71
+473,Andhra Pradesh,2022,Revenue,150115.09
+474,Andhra Pradesh,2022,Expenditure,156488.06
+475,Andhra Pradesh,2022,Fiscal Deficit,-6372.97
+476,Andhra Pradesh,2022,Debt,426917.73
+477,Andhra Pradesh,2023,Revenue,155886.81
+478,Andhra Pradesh,2023,Expenditure,166863.87
+479,Andhra Pradesh,2023,Fiscal Deficit,-10977.06
+480,Andhra Pradesh,2023,Debt,394153.54
+481,Andhra Pradesh,2024,Revenue,167596.98
+482,Andhra Pradesh,2024,Expenditure,178271.48
+483,Andhra Pradesh,2024,Fiscal Deficit,-10674.5
+484,Andhra Pradesh,2024,Debt,409102.58
+485,Punjab,2014,Revenue,67455.75
+486,Punjab,2014,Expenditure,72235.47
+487,Punjab,2014,Fiscal Deficit,-4779.72
+488,Punjab,2014,Debt,150255.67
+489,Punjab,2015,Revenue,70819.11
+490,Punjab,2015,Expenditure,75146.28
+491,Punjab,2015,Fiscal Deficit,-4327.17
+492,Punjab,2015,Debt,219704.73
+493,Punjab,2016,Revenue,75756.97
+494,Punjab,2016,Expenditure,79815.47
+495,Punjab,2016,Fiscal Deficit,-4058.5
+496,Punjab,2016,Debt,189310.12
+497,Punjab,2017,Revenue,78042.42
+498,Punjab,2017,Expenditure,82406.41
+499,Punjab,2017,Fiscal Deficit,-4364.0
+500,Punjab,2017,Debt,245099.57
+501,Punjab,2018,Revenue,83269.74
+502,Punjab,2018,Expenditure,87340.9
+503,Punjab,2018,Fiscal Deficit,-4071.17
+504,Punjab,2018,Debt,250993.18
+505,Punjab,2019,Revenue,87357.47
+506,Punjab,2019,Expenditure,94630.19
+507,Punjab,2019,Fiscal Deficit,-7272.72
+508,Punjab,2019,Debt,223482.6
+509,Punjab,2020,Revenue,88744.7
+510,Punjab,2020,Expenditure,95384.27
+511,Punjab,2020,Fiscal Deficit,-6639.57
+512,Punjab,2020,Debt,204438.41
+513,Punjab,2021,Revenue,95855.24
+514,Punjab,2021,Expenditure,100239.9
+515,Punjab,2021,Fiscal Deficit,-4384.65
+516,Punjab,2021,Debt,261121.97
+517,Punjab,2022,Revenue,98148.96
+518,Punjab,2022,Expenditure,104971.16
+519,Punjab,2022,Fiscal Deficit,-6822.21
+520,Punjab,2022,Debt,231367.39
+521,Punjab,2023,Revenue,102913.29
+522,Punjab,2023,Expenditure,111397.8
+523,Punjab,2023,Fiscal Deficit,-8484.51
+524,Punjab,2023,Debt,301272.47
+525,Punjab,2024,Revenue,110645.94
+526,Punjab,2024,Expenditure,116998.29
+527,Punjab,2024,Fiscal Deficit,-6352.35
+528,Punjab,2024,Debt,281348.42
+529,Delhi,2014,Revenue,39476.79
+530,Delhi,2014,Expenditure,41499.08
+531,Delhi,2014,Fiscal Deficit,-2022.28
+532,Delhi,2014,Debt,112566.04
+533,Delhi,2015,Revenue,41852.83
+534,Delhi,2015,Expenditure,43864.1
+535,Delhi,2015,Fiscal Deficit,-2011.27
+536,Delhi,2015,Debt,101840.6
+537,Delhi,2016,Revenue,45934.98
+538,Delhi,2016,Expenditure,49140.35
+539,Delhi,2016,Fiscal Deficit,-3205.37
+540,Delhi,2016,Debt,132340.71
+541,Delhi,2017,Revenue,49744.27
+542,Delhi,2017,Expenditure,52802.44
+543,Delhi,2017,Fiscal Deficit,-3058.17
+544,Delhi,2017,Debt,152002.84
+545,Delhi,2018,Revenue,53625.18
+546,Delhi,2018,Expenditure,57074.77
+547,Delhi,2018,Fiscal Deficit,-3449.59
+548,Delhi,2018,Debt,125484.12
+549,Delhi,2019,Revenue,58413.39
+550,Delhi,2019,Expenditure,60897.5
+551,Delhi,2019,Fiscal Deficit,-2484.11
+552,Delhi,2019,Debt,174284.56
+553,Delhi,2020,Revenue,62892.56
+554,Delhi,2020,Expenditure,68546.44
+555,Delhi,2020,Fiscal Deficit,-5653.88
+556,Delhi,2020,Debt,190786.26
+557,Delhi,2021,Revenue,67510.46
+558,Delhi,2021,Expenditure,72535.67
+559,Delhi,2021,Fiscal Deficit,-5025.2
+560,Delhi,2021,Debt,170621.6
+561,Delhi,2022,Revenue,72288.22
+562,Delhi,2022,Expenditure,78538.91
+563,Delhi,2022,Fiscal Deficit,-6250.68
+564,Delhi,2022,Debt,183454.33
+565,Delhi,2023,Revenue,79390.15
+566,Delhi,2023,Expenditure,82597.37
+567,Delhi,2023,Fiscal Deficit,-3207.22
+568,Delhi,2023,Debt,174986.95
+569,Delhi,2024,Revenue,86157.85
+570,Delhi,2024,Expenditure,92361.43
+571,Delhi,2024,Fiscal Deficit,-6203.58
+572,Delhi,2024,Debt,251575.1
+573,Odisha,2014,Revenue,60474.74
+574,Odisha,2014,Expenditure,63369.07
+575,Odisha,2014,Fiscal Deficit,-2894.33
+576,Odisha,2014,Debt,159641.72
+577,Odisha,2015,Revenue,65072.92
+578,Odisha,2015,Expenditure,69533.16
+579,Odisha,2015,Fiscal Deficit,-4460.24
+580,Odisha,2015,Debt,207096.54
+581,Odisha,2016,Revenue,70085.35
+582,Odisha,2016,Expenditure,75346.64
+583,Odisha,2016,Fiscal Deficit,-5261.3
+584,Odisha,2016,Debt,197746.63
+585,Odisha,2017,Revenue,74644.58
+586,Odisha,2017,Expenditure,81245.52
+587,Odisha,2017,Fiscal Deficit,-6600.94
+588,Odisha,2017,Debt,190844.99
+589,Odisha,2018,Revenue,83429.24
+590,Odisha,2018,Expenditure,90407.62
+591,Odisha,2018,Fiscal Deficit,-6978.38
+592,Odisha,2018,Debt,202666.31
+593,Odisha,2019,Revenue,88825.14
+594,Odisha,2019,Expenditure,95282.68
+595,Odisha,2019,Fiscal Deficit,-6457.54
+596,Odisha,2019,Debt,255993.49
+597,Odisha,2020,Revenue,94666.15
+598,Odisha,2020,Expenditure,99353.59
+599,Odisha,2020,Fiscal Deficit,-4687.44
+600,Odisha,2020,Debt,220031.13
+601,Odisha,2021,Revenue,102638.95
+602,Odisha,2021,Expenditure,111669.18
+603,Odisha,2021,Fiscal Deficit,-9030.24
+604,Odisha,2021,Debt,263015.93
+605,Odisha,2022,Revenue,112134.63
+606,Odisha,2022,Expenditure,122193.78
+607,Odisha,2022,Fiscal Deficit,-10059.15
+608,Odisha,2022,Debt,255084.72
+609,Odisha,2023,Revenue,119861.6
+610,Odisha,2023,Expenditure,130331.27
+611,Odisha,2023,Fiscal Deficit,-10469.66
+612,Odisha,2023,Debt,299649.37
+613,Odisha,2024,Revenue,131411.4
+614,Odisha,2024,Expenditure,141780.38
+615,Odisha,2024,Fiscal Deficit,-10368.98
+616,Odisha,2024,Debt,417456.47
+617,Haryana,2014,Revenue,62519.62
+618,Haryana,2014,Expenditure,66141.92
+619,Haryana,2014,Fiscal Deficit,-3622.3
+620,Haryana,2014,Debt,191619.34
+621,Haryana,2015,Revenue,67535.45
+622,Haryana,2015,Expenditure,70868.45
+623,Haryana,2015,Fiscal Deficit,-3333.0
+624,Haryana,2015,Debt,199291.12
+625,Haryana,2016,Revenue,71896.25
+626,Haryana,2016,Expenditure,77162.2
+627,Haryana,2016,Fiscal Deficit,-5265.95
+628,Haryana,2016,Debt,214743.06
+629,Haryana,2017,Revenue,78688.74
+630,Haryana,2017,Expenditure,84644.93
+631,Haryana,2017,Fiscal Deficit,-5956.19
+632,Haryana,2017,Debt,190111.88
+633,Haryana,2018,Revenue,83545.86
+634,Haryana,2018,Expenditure,89379.26
+635,Haryana,2018,Fiscal Deficit,-5833.4
+636,Haryana,2018,Debt,200587.86
+637,Haryana,2019,Revenue,90102.57
+638,Haryana,2019,Expenditure,97737.03
+639,Haryana,2019,Fiscal Deficit,-7634.45
+640,Haryana,2019,Debt,281084.67
+641,Haryana,2020,Revenue,95414.71
+642,Haryana,2020,Expenditure,102590.89
+643,Haryana,2020,Fiscal Deficit,-7176.17
+644,Haryana,2020,Debt,301485.84
+645,Haryana,2021,Revenue,102261.73
+646,Haryana,2021,Expenditure,108496.42
+647,Haryana,2021,Fiscal Deficit,-6234.69
+648,Haryana,2021,Debt,249583.71
+649,Haryana,2022,Revenue,107280.03
+650,Haryana,2022,Expenditure,116193.48
+651,Haryana,2022,Fiscal Deficit,-8913.46
+652,Haryana,2022,Debt,342958.23
+653,Haryana,2023,Revenue,117034.98
+654,Haryana,2023,Expenditure,126394.84
+655,Haryana,2023,Fiscal Deficit,-9359.86
+656,Haryana,2023,Debt,361550.79
+657,Haryana,2024,Revenue,122742.98
+658,Haryana,2024,Expenditure,129964.8
+659,Haryana,2024,Fiscal Deficit,-7221.83
+660,Haryana,2024,Debt,330619.57
